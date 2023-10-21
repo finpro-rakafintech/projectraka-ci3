@@ -19,13 +19,15 @@
               <p class="p">See what is going on with your business</p>
             </div>
           </div>
+
+    <form action="sign_in" method="post">
           <div class="frame-3">
             <div class="text-wrapper-4">Email</div>
-            <div class="div-wrapper"><div class="text-wrapper-5">mail@abc.com</div></div>
+            <input type="email" class="form-control form-control-lg" style="width: 168%;" name="email" placeholder="example@mail.com">
           </div>
           <div class="frame-4">
             <div class="text-wrapper-4">Password</div>
-            <div class="frame-5"><div class="text-wrapper-6">*****************</div></div>
+            <input type="password" class="form-control form-control-lg" style="width: 168%;" name="password" placeholder="**********">
           </div>
           <div class="frame-6">
             <div class="checkbox">
@@ -36,10 +38,11 @@
             </div>
             <div class="text-wrapper-8">Forgot Password?</div>
           </div>
-          <div class="frame-7"><div class="text-wrapper-9">Login</div></div>
+          <button class="btn frame-7" type="submit">Login</button>
         </div>
-        <img class="rectangle" src="<?=base_url('assets/img/rectangle.png')?>" />
-        <img class="raka-x" src="img/raka-500-x-200-piksel-1-1.png" />
+    </form>
+        <img class="rectangle" src="<?=base_url('assets/img/rectangle.jpg')?>" />
+        <img class="raka-x" src="<?=base_url('assets/img/Logo-RakaFintech.png')?>" />
       </div>
     </div>
   </body>

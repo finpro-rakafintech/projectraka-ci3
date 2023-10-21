@@ -2,6 +2,14 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class PagesController extends CI_Controller {
+
+	function __construct()
+	{
+		parent::__construct();
+		$this->load->model('LoginModel');
+		$this->load->library('form_validation');
+		$this->load->library('session');
+	}
 	
 	public function index()
 	{
@@ -16,6 +24,7 @@ class PagesController extends CI_Controller {
 
 	public function page_login()
 	{
+		$this->load->view('layout/header');
 		$this->load->view('auth/login');
 	}
 
