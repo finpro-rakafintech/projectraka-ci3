@@ -61,6 +61,10 @@ $route['sign_in'] = 'LoginController/index';
 $route['sign_up'] = 'RegisterController/index';
 
 
+// Route Setelah Login
+$route['home'] = 'HomeController/index';
+
+
 
 
 

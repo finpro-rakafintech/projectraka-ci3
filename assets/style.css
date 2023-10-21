@@ -8,8 +8,8 @@
   
   .login .div {
     background-color: #f3f3f3;
-    width: 1440px;
-    height: 1024px;
+    width: 100%;
+    height: 100%;
     position: relative;
   }
   
@@ -17,7 +17,7 @@
     position: absolute;
     width: 512px;
     height: 590px;
-    top: 234px;
+    top: 130px;
     left: 110px;
     background-color: #ffffff;
     border-radius: 22px;
@@ -118,7 +118,7 @@
     font-family: "Nunito Sans-SemiBold", Helvetica;
     font-weight: 600;
     color: #000000;
-    font-size: 14px;
+    font-size: 12pt;
     letter-spacing: 0;
     line-height: normal;
   }
@@ -261,6 +261,9 @@
     left: 36px;
     background-color: #0198a3;
     border-radius: 6px;
+    color: white;
+    font-family: "Nunito Sans-Bold", Helvetica;
+    font-weight: 700;
   }
   
   .login .text-wrapper-9 {
@@ -277,9 +280,8 @@
   
   .login .rectangle {
     position: absolute;
-    width: 704px;
-    height: 1024px;
-    top: 0;
+    width: 404px;
+    height: 724px;
     left: 736px;
     object-fit: cover;
   }
@@ -288,7 +290,6 @@
     position: absolute;
     width: 300px;
     height: 100px;
-    top: 110px;
     left: 113px;
     object-fit: cover;
   }
