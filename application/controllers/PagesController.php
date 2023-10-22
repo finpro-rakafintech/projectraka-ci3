@@ -33,5 +33,3 @@ class PagesController extends CI_Controller {
 		$this->load->view('auth/register');
 	}
 }
-
-?>
