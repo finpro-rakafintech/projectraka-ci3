@@ -1,6 +1,10 @@
 <?php
     function userIsLoggedIn(){
-        
+        // Validasi jika user belum login
+        if ($this->session->userdata('masuk') != TRUE) {
+            $url = base_url();
+            redirect($url);
+        }
     }
 
 ?>

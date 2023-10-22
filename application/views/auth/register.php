@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="<?= base_url('assets/style.css') ?>" />
 </head>
 
+// Halaman Register
 <body>
   <div class="login">
     <div class="div">
