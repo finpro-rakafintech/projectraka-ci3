@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -63,8 +63,7 @@ $route['sign_up'] = 'RegisterController/index';
 
 // Route Setelah Login
 $route['home'] = 'HomeController/index';
-
-
+$route['kalkulator'] = 'Kalkulator';
 
 
 

@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class PagesController extends CI_Controller {
+class PagesControllerTes extends CI_Controller
+{
 
 	function __construct()
 	{
@@ -10,7 +11,7 @@ class PagesController extends CI_Controller {
 		$this->load->library('form_validation');
 		$this->load->library('session');
 	}
-	
+
 	public function index()
 	{
 		$include = array(
