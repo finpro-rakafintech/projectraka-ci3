@@ -13,7 +13,7 @@
       <div class="overlap-group">
         <div class="frame">
           <div class="text-wrapper">Not Registered Yet?</div>
-          <div class="text-wrapper-2">Create an account</div>
+          <div class="text-wrapper-2"><a href="<?=site_url('register_page')?>">Create an account</a></div>
         </div>
         <div class="frame-wrapper">
           <div class="frame-2">

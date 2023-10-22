@@ -31,6 +31,10 @@
             <div class="text-wrapper-4">Password</div>
             <input type="password" class="form-control form-control-lg" style="width: 168%;" name="password" placeholder="**********" required>
           </div>
+          <div class="frame-4">
+            <div class="text-wrapper-4">Email</div>
+            <input type="password" class="form-control form-control-lg" style="width: 168%;" name="password" placeholder="**********" required>
+          </div>
           <div class="frame-6">
             <div class="checkbox">
               <div class="check">

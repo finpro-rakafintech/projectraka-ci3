@@ -1,3 +1,10 @@
+<?php
+    function userIsLoggedIn(){
+        
+    }
+
+?>
+
 <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark custom-navbar-bg" style="margin-bottom: 20px;">
         <a class="navbar-brand" href="#">
@@ -24,9 +31,15 @@
                     <a class="nav-link mr-3" href="#">Pengajuan KPR</a>
                 </li>
             </ul>
-            <form class="form-inline mt-2 mt-md-0">
-                <a href="<?= site_url('login_page'); ?>" class="btn btn-warning my-2 my-sm-" type="submit">Sign In</a>
-            </form>
+            <?php if (userIsLoggedIn()) { ?>
+                <li class="nav-item">
+                    <a class="nav-link mr-3" href="<?= site_url('logout_page'); ?>">Logout</a>
+                </li>
+            <?php } else { ?>
+                <li class="nav-item">
+                    <a class="nav-link mr-3" href="<?= site_url('login_page'); ?>">Login</a>
+                </li>
+            <?php } ?>
         </div>
     </nav>
 </header>

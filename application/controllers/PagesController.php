@@ -30,6 +30,7 @@ class PagesController extends CI_Controller {
 
 	public function page_register()
 	{
+		$this->load->view('layout/header');
 		$this->load->view('auth/register');
 	}
 }
