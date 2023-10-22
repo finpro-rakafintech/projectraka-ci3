@@ -9,33 +9,39 @@
 </head>
 
 <body>
-    <div class="row justify-content-center mt-5">
-        <div class="col-lg-4">
-            <div class="card">
-                <div class="card-header">
-                    <h1 class="card-title">Login</h1>
+    <div class="login">
+        <div class="div">
+            <div class="overlap-group">
+                <div class="frame">
+                    <div class="text-wrapper">Not Registered Yet?</div>
+                    <div class="text-wrapper-2">Create an account</div>
                 </div>
-                <div class="card-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="email" placeholder="name@example.com">
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="*****">
-                        </div>
-                        <div class="mb-3">
-                            <div class="d-grid">
-                                <div class="btn btn-primary">Login</div>
+                <div class="frame-wrapper">
+                    <div class="frame-2">
+                        <div class="text-wrapper-3">Bergabung ke RakaFintech</div>
+                        <p class="p">Sudah punya akun? Masuk</p>
+                    </div>
+                </div>
+
+                <form action="sign_up" method="post">
+                    <div class="frame-3">
+                        <div class="text-wrapper-4">Fullname</div>
+                        <input type="text" class="form-control form-control-lg" style="width: 168%;" name="fullname" placeholder="John Doe" required>
+                    </div>
+                    <div class="frame-4">
+                        <div class="text-wrapper-4">Password</div>
+                        <input type="password" class="form-control form-control-lg" style="width: 168%;" name="password" placeholder="**********" required>
+                    </div>
+                    <div class="frame-6">
+                        <div class="checkbox">
+                            <div class="check">
+                                <div class="check-solid"><img class="icons-navigation" src="img/check.svg" /></div>
                             </div>
+                            <div class="text-wrapper-7">Remember Me</div>
                         </div>
-                    </form>
-                </div>
+                    </div>
             </div>
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
 </html>
