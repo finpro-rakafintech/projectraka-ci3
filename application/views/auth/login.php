@@ -23,16 +23,13 @@
         </div>
 
         <form action="sign_in" method="post">
-          <?php if ($this->session->flashdata('msg')) : ?>
-            <p id="flash-msg" class="alert"><?php echo $this->session->flashdata('msg'); ?></p>
-          <?php endif; ?>
           <div class="frame-3">
             <div class="text-wrapper-4">Email</div>
-            <input type="email" class="form-control form-control-lg" style="width: 168%;" name="email" placeholder="example@mail.com">
+            <input type="email" class="form-control form-control-lg" style="width: 168%;" name="email" placeholder="example@mail.com" required>
           </div>
           <div class="frame-4">
             <div class="text-wrapper-4">Password</div>
-            <input type="password" class="form-control form-control-lg" style="width: 168%;" name="password" placeholder="**********">
+            <input type="password" class="form-control form-control-lg" style="width: 168%;" name="password" placeholder="**********" required>
           </div>
           <div class="frame-6">
             <div class="checkbox">
@@ -43,6 +40,7 @@
             </div>
             <div class="text-wrapper-8">Forgot Password?</div>
           </div>
+          <div id="liveAlertPlaceholder"></div>
           <button class="btn frame-7" type="submit">Login</button>
       </div>
       </form>
@@ -50,6 +48,30 @@
       <img class="raka-x" src="<?= base_url('assets/img/Logo-RakaFintech.png') ?>" />
     </div>
   </div>
+
+  <script lang="javascript">
+    const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+    const appendAlert = (message, type) => {
+      const wrapper = document.createElement('div')
+      wrapper.innerHTML = [
+        `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+        ` <div><?php if ($this->session->flashdata('msg')) : ?>
+              <p id="flash-msg" class="alert"><?php echo $this->session->flashdata('msg'); ?></p>
+            <?php endif; ?></div>`,
+        ' <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+        '</div>'
+      ].join('')
+
+      alertPlaceholder.append(wrapper)
+    }
+
+    const alertTrigger = document.getElementById('liveAlertBtn')
+    if (alertTrigger) {
+      alertTrigger.addEventListener('click', () => {
+        appendAlert('Nice, you triggered this alert message!', 'success')
+      })
+    }
+  </script>
 </body>
 
 </html>
