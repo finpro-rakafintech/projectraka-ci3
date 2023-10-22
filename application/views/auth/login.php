@@ -1,55 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <link rel="stylesheet" href="<?= base_url('assets/globals.css') ?>" />
-  <link rel="stylesheet" href="<?= base_url('assets/styleguide.css') ?>" />
-  <link rel="stylesheet" href="<?= base_url('assets/style.css') ?>" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Halaman Login</title>
+  <style>
+    body {
+      overflow: hidden;
+      /* Mencegah scrolling */
+    }
+  </style>
 </head>
 
-<body>
-  <div class="login">
-    <div class="div">
-      <div class="overlap-group">
-        <div class="frame">
-          <div class="text-wrapper">Not Registered Yet?</div>
-          <div class="text-wrapper-2"><a href="<?=site_url('register_page')?>">Create an account</a></div>
-        </div>
-        <div class="frame-wrapper">
-          <div class="frame-2">
-            <div class="text-wrapper-3">Login to your Account</div>
-            <p class="p">See what is going on with your business</p>
-          </div>
+<body style="padding-top: 0rem;padding-bottom: 0rem;background-color: #EEEEEE;">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col mr-2 pt-10">
+        <!-- Logo -->
+        <div class="text-center mt-4">
+          <img src="<?= base_url('assets/img'); ?>/Logo-RakaFintech.png" alt="Logo" style="max-height: 100px;">
         </div>
 
-        <form action="sign_in" method="post">
-          <div class="frame-3">
-            <?php if ($this->session->flashdata('msg')) : ?>
-              <p id="flash-msg" class="alert"><?php echo $this->session->flashdata('msg'); ?></p>
-            <?php endif; ?>
-            <div class="text-wrapper-4">Email</div>
-            <input type="email" class="form-control form-control-lg" style="width: 168%;" name="email" placeholder="example@mail.com" required>
-          </div>
-          <div class="frame-4">
-            <div class="text-wrapper-4">Password</div>
-            <input type="password" class="form-control form-control-lg" style="width: 168%;" name="password" placeholder="**********" required>
-          </div>
-          <div class="frame-6">
-            <div class="checkbox">
-              <div class="check">
-                <div class="check-solid"><img class="icons-navigation" src="img/check.svg" /></div>
+        <!-- Formulir Login -->
+        <div class="container mt-4">
+          <div class="row">
+            <div class="col">
+              <div class="card rounded shadow">
+                <div class="card-body">
+                  <h3 class="card-title" style="margin-left: 2rem;">Login to your Account</h3>
+                  <p style="margin-left: 2rem;">See what is going on with your business</p>
+
+                  <form action="sign_in" method="post">
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email" class="form-control" name="email" placeholder="youremail@example.com" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="password">Password</label>
+                      <input type="password" class="form-control" name="password" placeholder="**********" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-info btn-block mt-3">Masuk</button>
+                    <div class="form-group mt-2 text-center">
+                      <div class="form-check d-inline">
+                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">Remember Me</label>
+                      </div>
+                      <a href="#" class="text-info ml-3">Forgot Password?</a>
+                    </div>
+                    <p class="mt-2 text-center">Not Registered Yet? <a href="register_page" class="text-info">Create an account</a></p>
+                  </form>
+                </div>
               </div>
-              <div class="text-wrapper-7">Remember Me</div>
             </div>
-            <div class="text-wrapper-8">Forgot Password?</div>
           </div>
-          <button class="btn frame-7" type="submit">Login</button>
+        </div>
       </div>
-      </form>
-      <img class="rectangle" src="<?= base_url('assets/img/rectangle.jpg') ?>" />
-      <img class="raka-x" src="<?= base_url('assets/img/Logo-RakaFintech.png') ?>" />
+      <div class="col-md-6" style="background-color: #f7f7f7; padding-left: 0; padding-right: 0;">
+        <!-- Gambar di sini -->
+        <img src="<?= base_url('assets/img'); ?>/Rectangle.png" alt="Gambar" class="img-fluid">
+      </div>
     </div>
   </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
