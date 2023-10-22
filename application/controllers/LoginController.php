@@ -1,9 +1,10 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class LoginController extends CI_Controller {
+class LoginController extends CI_Controller
+{
 
-    public function __construct()
+	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('LoginModel');
@@ -11,8 +12,9 @@ class LoginController extends CI_Controller {
 		$this->load->library('session');
 	}
 
-    public function index(){
-        $email = htmlspecialchars($this->input->post('email', TRUE), ENT_QUOTES);
+	public function index()
+	{
+		$email = htmlspecialchars($this->input->post('email', TRUE), ENT_QUOTES);
 		$password = htmlspecialchars($this->input->post('password', TRUE), ENT_QUOTES);
 
 		$cek_level = $this->LoginModel->cek_level($email);
@@ -43,17 +45,15 @@ class LoginController extends CI_Controller {
 				}
 			} else {
 				// Password salah
-				$url = base_url();
+				$url = site_url('login_page');
 				echo $this->session->set_flashdata('msg', 'Email atau Password Salah');
 				redirect($url);
 			}
 		} else {
 			// Email tidak ditemukan
-			$url = base_url();
+			$url = site_url('login_page');
 			echo $this->session->set_flashdata('msg', 'Email Tidak Ditemukan');
 			redirect($url);
 		}
-    }
+	}
 }
-
-?>

@@ -23,6 +23,9 @@
         </div>
 
         <form action="sign_in" method="post">
+          <?php if ($this->session->flashdata('msg')) : ?>
+            <p id="flash-msg" class="alert"><?php echo $this->session->flashdata('msg'); ?></p>
+          <?php endif; ?>
           <div class="frame-3">
             <div class="text-wrapper-4">Email</div>
             <input type="email" class="form-control form-control-lg" style="width: 168%;" name="email" placeholder="example@mail.com">
