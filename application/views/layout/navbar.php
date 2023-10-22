@@ -9,7 +9,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mx-auto"> <!-- Tambahkan kelas mx-auto di sini -->
                 <li class="nav-item active">
-                    <a class="nav-link mr-3" href="<?= site_url('index.php'); ?>">Home</a>
+                    <a class="nav-link mr-3" href="<?= site_url(''); ?>">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link mr-3" href="#">About</a>
