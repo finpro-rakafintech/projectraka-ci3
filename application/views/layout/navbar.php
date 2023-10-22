@@ -18,7 +18,7 @@
                     <a class="nav-link mr-3" href="#">Produk</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mr-3" href="#">Kalkulator</a>
+                    <a class="nav-link mr-3" href="<?= site_url('kalkulator'); ?>">Kalkulator</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link mr-3" href="#">Pengajuan KPR</a>
