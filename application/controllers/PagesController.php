@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class PagesController extends CI_Controller {
 
-	function __construct()
+	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('LoginModel');
@@ -16,6 +16,7 @@ class PagesController extends CI_Controller {
 		$include = array(
 			'header' => $this->load->view('layout/header'),
 			'navbar' => $this->load->view('layout/navbar'),
+			'active_link' => 'active',
 		);
 
 		$this->load->view('landing/index', $include);

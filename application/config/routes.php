@@ -65,6 +65,7 @@ $route['logout'] = 'LogoutController/index';
 // Route Setelah Login
 $route['home'] = 'HomeController/index';
 $route['kalkulator'] = 'Kalkulator';
+$route['product'] = 'ProductController';
 
 
 

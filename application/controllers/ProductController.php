@@ -1,7 +1,8 @@
 <?php
-class Kalkulator extends CI_Controller
-{
+defined('BASEPATH') or exit('No direct script allowed');
 
+class ProductController extends CI_Controller
+{
     public function __construct()
     {
         parent::__construct();
@@ -11,17 +12,26 @@ class Kalkulator extends CI_Controller
             $url = base_url();
             redirect($url);
         }
+
+        $this->load->model('ProductModel');
+		$this->load->library('session');
     }
 
     public function index()
     {
+        $get_product = $this->ProductModel->view_product();
+
         $include = array(
             'nama_user' => $this->session->userdata('nama_user'),
             'header' => $this->load->view('layout/header'),
             'navbar' => $this->load->view('layout/navbar'),
 			'active_link' => 'active',
-        );
-        $this->load->view('kalkulator/kalkulator_view', $include);
+            'v_product' => $get_product,
+        );   
+
+        $this->load->view('product/view', $include);
         $this->load->view('layout/footer');
     }
 }
+
+?>

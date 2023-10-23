@@ -8,14 +8,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mx-auto"> <!-- Tambahkan kelas mx-auto di sini -->
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link mr-3" href="<?= site_url(''); ?>">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link mr-3" href="#">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mr-3" href="#">Produk</a>
+                    <a class="nav-link mr-3" href="<?= site_url('product'); ?>">Produk</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link mr-3" href="<?= site_url('kalkulator'); ?>">Kalkulator</a>
@@ -26,7 +26,7 @@
             </ul>
             <?php if ($this->session->userdata('masuk') == TRUE) { ?>
                 <form class="form-inline mt-2 mt-md-0">
-                    <a href="#" class="text-warning mr-4" type="submit"><?= $nama_user ?></a>
+                    <!-- <a href="#" class="text-warning mr-4" type="submit"><?= $nama_user; ?></a> -->
                 </form>
                 <form class="form-inline mt-2 mt-md-0">
                     <a href="<?= site_url('logout'); ?>" class="btn btn-warning my-2 my-sm-" type="submit">Log Out</a>

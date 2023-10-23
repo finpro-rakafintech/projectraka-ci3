@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class HomeController extends CI_Controller
 {
 
-	function __construct()
+	public function __construct()
 	{
 		parent::__construct();
 
@@ -20,9 +20,10 @@ class HomeController extends CI_Controller
 		$include = array(
 			'nama_user' => $this->session->userdata('nama_user'),
 			'header' => $this->load->view('layout/header'),
+			'navbar' => $this->load->view('layout/navbar'),
+			'active_link' => 'active',
 		);
 
-		$this->load->view('layout/navbar', $include);
 		$this->load->view('home/index', $include);
 		$this->load->view('layout/footer');
 	}
