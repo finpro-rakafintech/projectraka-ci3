@@ -26,7 +26,7 @@
             </ul>
             <?php if ($this->session->userdata('masuk') == TRUE) { ?>
                 <form class="form-inline mt-2 mt-md-0">
-                    <!-- <a href="#" class="text-warning mr-4" type="submit"><?= $nama_user; ?></a> -->
+                    <!-- <a href="#" class="text-warning mr-4" type="submit"><?= $nama_user ?></a> -->
                 </form>
                 <form class="form-inline mt-2 mt-md-0">
                     <a href="<?= site_url('logout'); ?>" class="btn btn-warning my-2 my-sm-" type="submit">Log Out</a>

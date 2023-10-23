@@ -19,8 +19,8 @@ class Kalkulator extends CI_Controller
             'nama_user' => $this->session->userdata('nama_user'),
             'header' => $this->load->view('layout/header'),
             'navbar' => $this->load->view('layout/navbar'),
-			'active_link' => 'active',
         );
+        
         $this->load->view('kalkulator/kalkulator_view', $include);
         $this->load->view('layout/footer');
     }
