@@ -24,9 +24,18 @@
                     <a class="nav-link mr-3" href="#">Pengajuan KPR</a>
                 </li>
             </ul>
-            <form class="form-inline mt-2 mt-md-0">
-                <a href="<?= site_url('login_page'); ?>" class="btn btn-warning my-2 my-sm-" type="submit">Sign In</a>
-            </form>
+            <?php if ($this->session->userdata('masuk') == TRUE) { ?>
+                <form class="form-inline mt-2 mt-md-0">
+                    <a href="#" class="text-warning mr-4" type="submit"><?= $nama_user ?></a>
+                </form>
+                <form class="form-inline mt-2 mt-md-0">
+                    <a href="<?= site_url('logout'); ?>" class="btn btn-warning my-2 my-sm-" type="submit">Log Out</a>
+                </form>
+            <?php } else { ?>
+                <form class="form-inline mt-2 mt-md-0">
+                    <a href="<?= site_url('login_page'); ?>" class="btn btn-warning my-2 my-sm-" type="submit">Sign In</a>
+                </form>
+            <?php } ?>
         </div>
     </nav>
 </header>
