@@ -59,6 +59,7 @@ $route['login_page'] = 'PagesController/page_login';
 $route['register_page'] = 'PagesController/page_register';
 $route['sign_in'] = 'LoginController/index';
 $route['sign_up'] = 'RegisterController/index';
+$route['logout'] = 'LogoutController/index';
 
 
 // Route Setelah Login
