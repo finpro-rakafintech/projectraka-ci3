@@ -32,6 +32,17 @@
                   <h3 class="card-title" style="margin-left: 2rem;">Login to your Account</h3>
                   <p style="margin-left: 2rem;">See what is going on with your business</p>
 
+                  <?php if ($this->session->flashdata('msg')) : ?>
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                      <?php
+                        echo $this->session->flashdata('msg');
+                      ?>
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                  <?php endif; ?>
+
                   <form action="sign_in" method="post">
                     <div class="form-group">
                       <label for="email">Email</label>

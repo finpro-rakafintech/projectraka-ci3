@@ -31,6 +31,19 @@
                                 <div class="card-body">
                                     <h3 class="card-title">Bergabung ke RakaFintech</h3>
                                     <p>Sudah Punya Akun? <a href="login_page" class="text-warning">Masuk</a></p>
+
+                                    <?php if ($this->session->flashdata('error')) : ?>
+                                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                        <?php
+                                            echo $this->session->flashdata('error');
+                                        ?>
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <?php endif; ?>
+
+
                                     <form action="sign_up" method="post">
                                         <div class="form-group">
                                             <label for="fullname">Fullname</label>

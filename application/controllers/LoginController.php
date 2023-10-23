@@ -22,8 +22,8 @@ class LoginController extends CI_Controller
 		if ($cek_level) {
 			if (password_verify($password, $cek_level['password'])) {
 				$data_session = array(
-					'username' => $cek_level['username'],
-					'nama_user' => $cek_level['nama_user']
+					'nama_user' => $cek_level['fullname'],
+					'email' => $cek_level['email']
 				);
 
 				$this->session->set_userdata($data_session);
