@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark custom-navbar-bg" style="margin-bottom: 20px;">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark custom-navbar-bg" style="margin-bottom: 20px; ">
         <a class="navbar-brand" href="#">
             <img src="<?= base_url('vendor/theme'); ?>/RakaLogo.png" width="160" height="50" class="d-inline-block align-top" alt="">
         </a>
