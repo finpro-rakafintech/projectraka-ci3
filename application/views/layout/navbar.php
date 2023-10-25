@@ -21,7 +21,7 @@
                     <a class="nav-link mr-3" href="<?= site_url('kalkulator'); ?>">Kalkulator</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mr-3" href="#">Pengajuan KPR</a>
+                    <a class="nav-link mr-3" href="<?= site_url('pengajuan_kpr'); ?>">Pengajuan KPR</a>
                 </li>
             </ul>
             <?php if ($this->session->userdata('masuk') == TRUE) { ?>

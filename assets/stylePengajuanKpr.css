@@ -1,0 +1,412 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+main {
+  background-color: #fff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0198a3;
+
+  height: 82px;
+  padding: 0 4.8rem;
+  position: relative;
+}
+
+.header .logo {
+  transform: translate(0, 10%);
+}
+
+.logo {
+  width: 249px;
+  height: 73px;
+}
+
+.main-nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 31px;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited,
+.cta-btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 20px;
+  transition: all 0.3s;
+}
+
+.main-nav-link.nav-cta:link,
+.main-nav-link.nav-cta:visited,
+.cta-btn {
+  padding: 10px 20px;
+  border-radius: 11px;
+  color: #fff;
+  background-color: #ffc232;
+  font-weight: 700;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 54fr 45fr;
+  column-gap: 97px;
+}
+
+.section-img {
+  padding: 96px 0 112px 0;
+}
+
+.section-img .heading-primary {
+  line-height: 1.5;
+}
+
+.img-house {
+  width: 100%;
+  height: 280px;
+  border-radius: 19px;
+  object-fit: cover;
+}
+
+.carousel {
+  position: relative;
+}
+
+.btn {
+  border: none;
+  background: none;
+  height: 29px;
+  width: 24px;
+  position: absolute;
+  cursor: pointer;
+}
+
+.btn--left {
+  left: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.btn--right {
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.section-detail {
+  padding: 96px 0;
+}
+
+.section-detail .container > *:last-child {
+  transform: translate(0, 32px);
+}
+
+.underline::after {
+  content: "";
+  display: block;
+  height: 16px;
+  background-color: #ffc232;
+  margin-bottom: 36px;
+}
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: -0.6px;
+}
+
+.heading-primary {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.heading-secondary {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.heading-tertiary {
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.list-detail {
+  list-style: none;
+  font-size: 15px;
+  line-height: 36px;
+  margin-left: 2px;
+  font-weight: 600;
+  letter-spacing: -0.225px;
+}
+
+.img-maps {
+  width: 390px;
+  height: 280px;
+  border-radius: 19px;
+  object-fit: cover;
+}
+
+.section-form {
+  padding: 96px 0;
+}
+
+.section-form .underline::after {
+  margin-top: 4px;
+}
+
+.gap-md {
+  gap: 28px;
+}
+
+.gap-sm {
+  gap: 16px;
+}
+
+.cta-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 695px;
+}
+
+.cta-form label {
+  display: block;
+}
+
+.cta-form input,
+.cta-form textarea {
+  width: 100%;
+  padding: 13px 10px;
+  border-radius: 5px;
+  border: 1px solid #545454;
+  mix-blend-mode: darken;
+}
+
+.cta-form textarea {
+  height: 93px;
+}
+
+.form-input .cta-form > *:last-child {
+  margin-top: 15px;
+}
+
+.cta-btn {
+  align-self: flex-end;
+  border-radius: 19px;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 14px 36px;
+}
+
+footer {
+  padding-top: 70px;
+  background-color: #0198a3;
+  color: #fff;
+  font-size: 14px;
+}
+
+.grid--footer {
+  display: grid;
+  column-gap: 64px;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+}
+
+.logo-col,
+.footer-col-list {
+  font-size: 15px;
+}
+
+.company-col {
+  grid-column-start: 3;
+}
+
+.company-col,
+.services-col,
+.cta-col {
+  padding-top: 75px;
+}
+
+.footer-col-list span {
+  font-weight: 700;
+}
+
+.footer-col-list li {
+  padding-left: 0;
+  list-style-position: inside;
+  line-height: 1.8;
+}
+
+.cta-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-cta {
+  width: 117px;
+  text-align: center;
+  padding: 12px 15px;
+  border-radius: 6px;
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  transition: all 0.3s;
+  background-color: #ffc232;
+}
+
+.footer-cta--login {
+  background-color: #fff;
+  color: #000;
+}
+
+.copyright-col {
+  background-color: #ffc232;
+  margin-top: 70px;
+}
+
+.copyright-text {
+  display: flex;
+  align-items: center;
+  height: 49px;
+  color: #000;
+  font-weight: 700;
+}
+
+/**************************/
+/* HALAMAN PENGAJUAN KPR*/
+/**************************/
+
+.section-pengajuan-kpr {
+  padding: 80px 0;
+}
+
+.form-title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: "Istok Web", sans-serif;
+  padding-left: 110px;
+  margin-bottom: 27px;
+}
+
+.form-title button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.form-title h1 {
+  font-size: 32px;
+}
+
+.img-home {
+  width: 50px;
+  height: 50px;
+}
+
+.container-pengajuan {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.form-step {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  background-color: #cee5e6;
+  padding: 20px;
+  font-size: 18px;
+  font-family: "Istok Web", sans-serif;
+  font-weight: 400;
+  border-radius: 5px;
+}
+
+.current-step {
+  padding-top: 5px;
+  padding-bottom: 2px;
+  border-bottom-style: solid;
+  border-bottom-width: 3.1px;
+}
+
+.form-input {
+  font-family: "Istok Web", sans-serif;
+}
+
+.form-input label {
+  color: #000;
+  font-weight: 500;
+}
+
+.form-input input {
+  /* color: rgba(121, 115, 115, 0.82); */
+  color: #000;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.form-input input::placeholder {
+  color: #a1a1a1;
+}
+
+.accordion {
+  position: relative;
+  display: flex;
+  border: 1px solid #545454;
+  border-radius: 5px;
+  align-items: center;
+}
+
+.accordion input {
+  border: none;
+}
+
+.accordion button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  transform: translate(0, 5%);
+  padding: 0 20px;
+}
+
+.btn-progress {
+  display: flex;
+  align-self: flex-end;
+  gap: 12px;
+}
+
+.container-pengajuan .cta-btn {
+  text-transform: none;
+  font-weight: 400;
+}
+
+.cta-btn--back {
+  background-color: #fff;
+  box-shadow: inset 0 0 0 1px #000;
+  color: #000;
+}

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script allowed');
 
-class ProductController extends CI_Controller
+class PengajuanKprController extends CI_Controller
 {
     public function __construct()
     {
@@ -13,35 +13,31 @@ class ProductController extends CI_Controller
             redirect($url);
         }
 
-        $this->load->model('ProductModel');
+        // $this->load->model('ProductModel');
 		$this->load->library('session');
     }
 
     public function index()
     {
-        $get_product = $this->ProductModel->view_product();
-
         $include = array(
             'nama_user' => $this->session->userdata('nama_user'),
             'header' => $this->load->view('layout/header'),
             'navbar' => $this->load->view('layout/navbar'),
-			'active_link' => 'active',
-            'v_product' => $get_product,
         );   
 
-        $this->load->view('product/view', $include);
+        $this->load->view('pengajuan_kpr/view1', $include);
         $this->load->view('layout/footer');
     }
 
-    public function productDetail()
+    public function index2()
     {
         $include = array(
             'nama_user' => $this->session->userdata('nama_user'),
             'header' => $this->load->view('layout/header'),
             'navbar' => $this->load->view('layout/navbar'),
-        );
+        );   
 
-        $this->load->view('product/detailProduct', $include);
+        $this->load->view('pengajuan_kpr/view2', $include);
         $this->load->view('layout/footer');
     }
 }

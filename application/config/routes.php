@@ -66,6 +66,9 @@ $route['logout'] = 'LogoutController/index';
 $route['home'] = 'HomeController/index';
 $route['kalkulator'] = 'Kalkulator';
 $route['product'] = 'ProductController';
+$route['product_detail'] = 'ProductController/productDetail';
+$route['pengajuan_kpr'] = 'PengajuanKprController/index';
+$route['pengajuan_kpr2'] = 'PengajuanKprController/index2';
 
 
 
