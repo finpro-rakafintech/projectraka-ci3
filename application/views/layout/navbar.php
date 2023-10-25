@@ -12,7 +12,7 @@
                     <a class="nav-link mr-3" href="<?= site_url(''); ?>">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mr-3" href="#">About</a>
+                    <a class="nav-link mr-3" href="<?= site_url('AboutController'); ?>">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link mr-3" href="<?= site_url('product'); ?>">Produk</a>

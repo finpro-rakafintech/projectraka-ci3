@@ -3,7 +3,7 @@
   <p class="float-right"><a href="#">Back to top</a></p>
   <p>&copy;  Kelompok_8 IT Perbankan. All rights reserved</p>
 </footer>
-</main>
+
 </body>
 
 <!-- Bootstrap core JavaScript

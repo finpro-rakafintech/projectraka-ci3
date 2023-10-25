@@ -20,6 +20,10 @@
     .custom-navbar-bg {
       background-color: #0198A3 !important;
     }
+    .card {
+    border-radius: .1rem;
+    border-shadow: 1rem;
+    }
   </style>
 
 

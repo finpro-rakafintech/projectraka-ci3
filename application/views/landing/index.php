@@ -258,4 +258,68 @@
 
     <!-- /END THE FEATURETTES -->
     <hr class="featurette-divider">
+    <div class="container">
+    <div class="row">
+    <h2 style="color: black; font-size: 32px;  font-weight: 700; word-wrap: break-word;">Kata Mereka yang Sudah Menggunakan Layanan RakaFintech</h2><br>
+    </br>
+    <div class="row text-center">
+      <div class="col-md-4 mb-4 mb-md-0">
+        <div class="card">
+          <div class="card-body py-4 mt-2">
+            <div class="d-flex justify-content-center mb-4">
+              <img src="<?php echo base_url('assets')?>/icons/makr.png"
+                class="rounded-circle shadow-1-strong" width="100" height="100" />
+            </div>
+            <h5 class="font-weight-bold">Samuel</h5>
+            <h6 class="font-weight-bold my-3">Agen</h6>
+           
+            <p class="mb-2 justify">
+             
+              RakaFintech membantu saya mendapatkan leads dari customer dengan optimal.
+               Dengan memanfaatkan Feature Listing, calon pembeli datang setiap harinya.
+                Selain mendapatkan prospek untuk calon pembeli, saya juga mendapatkan leads untuk riset pengembangan properti saya.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 mb-md-0">
+        <div class="card">
+          <div class="card-body py-4 mt-2">
+            <div class="d-flex justify-content-center mb-4">
+              <img src="<?php echo base_url('assets')?>/icons/makr.png"
+                class="rounded-circle shadow-1-strong" width="100" height="100" />
+            </div>
+            <h5 class="font-weight-bold">Dewa</h5>
+            <h6 class="font-weight-bold my-3">Founder at RakaFintech</h6>
+          
+            <p class="mb-2">
+              situsnya bagus... membantu dalam memberikan informasi untuk mencari rumah khususnya buat saya yang suka cari2 informasi melalui hp... suksess ya untuk rakafintech... dan terus membantu untuk para pencari hunian seperti saya.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4 mb-md-0">
+        <div class="card">
+          <div class="card-body py-4 mt-2">
+            <div class="d-flex justify-content-center mb-4">
+              <img src="<?php echo base_url('assets')?>/icons/makr.png"
+                class="rounded-circle shadow-1-strong" width="100" height="100" />
+            </div>
+            <h5 class="font-weight-bold">Teresa May</h5>
+            <h6 class="font-weight-bold my-3">Founder at ET Company</h6>
+            
+            <p class="mb-2">
+              Lorem ipsum dolor sit amet,
+              consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat
+              ad velit ab hic tenetur.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
   </div><!-- /.container -->
+  <hr class="featurette-divider">
+</main>
