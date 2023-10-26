@@ -15,6 +15,7 @@
 
   <!-- Custom styles for this template -->
   <link rel="stylesheet" href="<?= base_url('assets/style.css') ?>" />
+  <!-- <link rel="stylesheet" href="<?= base_url('assets/styleDetailProduct.css') ?>"> -->
   <link href="<?= base_url('vendor/theme'); ?>/carousel.css" rel="stylesheet">
   <style>
     .custom-navbar-bg {

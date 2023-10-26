@@ -14,7 +14,7 @@
                         <h5 class="card-title"><?php echo $row->nm_product; ?></h5>
                         <p class="card-text">Deskripsi</p>
                         <h5 class="card-title">Rp. <?php echo $row->price; ?></h5>
-                        <a href="#" class="btn btn-warning">Lihat Detail</a>
+                        <a href="<?= site_url('product_detail'); ?>" class="btn btn-warning">Lihat Detail</a>
                     </div>
                 </div>
             </div>
