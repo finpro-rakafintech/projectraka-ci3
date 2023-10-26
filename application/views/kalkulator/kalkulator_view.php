@@ -20,7 +20,7 @@
 
         <button type="submit" name="submit" class="btn btn-warning">CEK</button>
     </form>
-
+</main>
     <script>
         const interestRateInput = document.querySelector('input[name="interest_rate"]');
         const loanTermInput = document.querySelector('input[name="loan_term"]');

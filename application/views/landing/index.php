@@ -5,8 +5,9 @@
         <h2 class="featurette-heading"><b>RakaFintech</b></h2>
         <p class="lead">Raka Fintech merupakan platform berbasis web yang memudahkan Nasabah dalam proses pembelian KPR (Kredit Pemilikan Rumah) dan simulasi KPR. Raka Fintech hadir untuk mewujudkan impian Nasabah memiliki rumah/tanah impian dengan solusi keuangan yang tepat.</p>
       </div>
-      <div class=" col-md-5">
+      <div class=" col-md-5 pt-5">
         <img class="featurette-image img-fluid " style="width: 800px; height: 350px; box-shadow: 0px 4px 4px rgba(1, 152, 163, 0.50); border-radius: 69px"  src="<?php echo base_url('assets')?>/img/home1.png" alt="Generic placeholder image">
+     
       </div>
     </div>
   </div>
