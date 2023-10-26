@@ -11,7 +11,7 @@
   <title>Raka Fintech | Rakamin Academy</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="<?= base_url('vendor'); ?>/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="<?=base_url('vendor'); ?>/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link rel="stylesheet" href="<?= base_url('assets/style.css') ?>" />
@@ -21,8 +21,8 @@
       background-color: #0198A3 !important;
     }
     .card {
-    border-radius: .1rem;
-    border-shadow: 1rem;
+      border-radius: .1rem;
+      border-shadow: 1rem;
     }
   </style>
 
