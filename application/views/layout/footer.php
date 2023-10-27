@@ -3,7 +3,7 @@
       <div class="ud-footer-widgets" style="background: #0198A3;">
         <div class="container" style="background: #0198A3; color: white;">
           <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-6">
+            <div class="col-xl-4 col-lg-4 col-md-6 mb-3 mt-3">
               <div class="ud-widget">
                 <a href="" class="ud-footer-logo">
                   <img src="<?= base_url('assets')?>/img/footer2.png" width="200" alt="logo" />
@@ -13,7 +13,11 @@
                 <b>RakaFintech</b> adalah situs teknologi jual beli properti terdepan di Indonesia yang telah melayani jutaan orang sejak 2023, 
                 dan kini hadir untuk membuat <b>“Jual Beli Properti Lebih Mudah”</b> dengan dukungan developer serta agen profesional.
                 </p>
-           
+                <a href="" class="ud-footer-logo">
+                  <img src="<?= base_url('assets')?>/icons/icon-appstore.png" width="150" alt="logo" /></br>
+                  <img src="<?= base_url('assets')?>/icons/icon-gplay.png" width="150" alt="logo" />
+                </a>
+
               </div>
             </div>
 
@@ -74,7 +78,7 @@
     </footer>
     <!-- ====== Footer End ====== -->
 <div class="row" style="background: #FFC232;">
-<footer class="container pt-2">
+<footer class="container pt-2 ">
   <p class="float-right"><a href="#" class="btn btn-info">Back to top</a></p>
   <p class="float-center" style="text-align: left; text-bold">&copy;  Kelompok_8 IT Perbankan. All rights reserved</p>
   </footer>
@@ -87,8 +91,11 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script>
-  window.jQuery || document.write'<script src="<?= base_url('vendor'); ?>/assets/js/vendor/jquery-slim.min.js">
+  if (typeof jQuery === 'undefined') {
+    document.write('<script src="<?= base_url('vendor'); ?>/assets/js/vendor/jquery-slim.min.js"><\/script>');
+  }
 </script>
+
 <script src="<?= base_url('vendor'); ?>/assets/js/vendor/popper.min.js"></script>
 <script src="<?= base_url('vendor'); ?>/dist/js/bootstrap.min.js"></script>
 <!-- Just to make our placeholder images work. Don't actually copy the next line! -->

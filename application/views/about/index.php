@@ -63,6 +63,7 @@
     <div class="col-md-auto">
     <img src="<?php echo base_url('assets')?>/icons/makr.png" class="img-fluid" alt="Responsive image">
     </div>
+  
     
   </div>
 </div>
@@ -76,18 +77,60 @@
 </div>
 <div class="container">
   <div class="row justify-content-md-center">
-    <div class="col-md-auto">
-      1 of 3
+  <div class="col-md-auto">
+    <img src="<?php echo base_url('assets')?>/icons/makr.png" class="img-fluid" alt="Responsive image">
     </div>
     <div class="col-md-auto">
-      Variable width content
+    <img src="<?php echo base_url('assets')?>/icons/makr.png" class="img-fluid" alt="Responsive image">
     </div>
-    
   </div>
 </div>
+<!-- Three columns of text below the carousel -->
+<div class="row pt-5">
+<div class="container text-center">
+  <h3 style="color: black; font-size: 30px;  font-family: Nunito Sans-Bold; font-weight: 400; word-wrap: break-word">
+  BackEnd Developer
+  </h3>
+</div> 
+</div>
+<div class="container">
+  <div class="row justify-content-md-center">
+  <div class="col-md-auto">
+    <img src="<?php echo base_url('assets')?>/icons/makr.png" class="img-fluid" alt="Responsive image">
+    </div>
+    <div class="col-md-auto">
+    <img src="<?php echo base_url('assets')?>/icons/makr.png" class="img-fluid" alt="Responsive image">
+    </div>
+    <div class="col-md-auto">
+    <img src="<?php echo base_url('assets')?>/icons/makr.png" class="img-fluid" alt="Responsive image">
+    </div>
+  </div>
+<!-- Three columns of text below the carousel -->
+<div class="row pt-5">
+<div class="container text-center">
+  <h3 style="color: black; font-size: 30px;  font-family: Nunito Sans-Bold; font-weight: 400; word-wrap: break-word">
+  FrontEnd Developer
+  </h3>
+</div> 
+</div>
+<div class="container">
+  <div class="row justify-content-md-center">
+  <div class="col-md-auto">
+    <img src="<?php echo base_url('assets')?>/icons/makr.png" class="img-fluid" alt="Responsive image">
+    </div>
+    <div class="col-md-auto">
+    <img src="<?php echo base_url('assets')?>/icons/makr.png" class="img-fluid" alt="Responsive image">
+    </div>
+    <div class="col-md-auto">
+    <img src="<?php echo base_url('assets')?>/icons/makr.png" class="img-fluid" alt="Responsive image">
+    </div>
+    <div class="col-md-auto">
+    <img src="<?php echo base_url('assets')?>/icons/makr.png" class="img-fluid" alt="Responsive image">
+    </div>
+  </div>
+
 
 </main>
 
 
-<hr class="featurette-divider">
 
