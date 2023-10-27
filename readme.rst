@@ -1,5 +1,5 @@
 ###################
-Raka Fintech V1.0.0
+Raka Fintech App V1.0.0
 ###################
 Raka Fintech merupakan platform berbasis web yang memudahkan Nasabah dalam proses pembelian KPR 
 (Kredit Pemilikan Rumah) dan simulasi KPR. Raka Fintech hadir untuk mewujudkan impian Nasabah memiliki 
