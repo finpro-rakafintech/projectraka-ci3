@@ -1,14 +1,14 @@
 
     <main>
-      <section class="section-pengajuan-kpr">
-        <div class="container">
+      <section class="section-pengajuan-kpr pb-5">
+        <div class="container pt-5">
           <div class="form-title">
             <img class="img-home" src="assets/icon/home-btn.png" alt="" />
             <button>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="48"
-                height="48"
+                width="20"
+                height="20"
                 viewBox="0 0 48 48"
                 fill="none"
               >

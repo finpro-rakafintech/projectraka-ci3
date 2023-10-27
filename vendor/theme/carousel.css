@@ -47,6 +47,7 @@ body {
 }
 .marketing h2 {
   font-weight: 400;
+  font-family: "Nunito Sans-Regular", Helvetica;
 }
 .marketing .col-lg-4 p {
   margin-right: .75rem;
