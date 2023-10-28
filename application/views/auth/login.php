@@ -20,7 +20,7 @@
       <div class="col mr-2 pt-10">
         <!-- Logo -->
         <div class="text-center mt-4">
-          <img src="<?= base_url('assets/img'); ?>/Logo-RakaFintech.png" alt="Logo" style="max-height: 100px;">
+          <img src="<?= base_url('assets/img'); ?>/footer.png" alt="Logo" style="max-height: 100px;">
         </div>
 
         <!-- Formulir Login -->

@@ -36,13 +36,13 @@
                 <h5 class="ud-widget-title">Perusahaan</h5>
                 <ul class="ud-widget-links">
                   <li>
-                    <a>Home</a>
+                    <a href="<?= site_url('PagesController');?>" style="color: white;">Home</a>
                   </li>
                   <li>
-                    <a>About</a>
+                    <a href="<?= site_url('AboutController');?>" style="color: white;">About</a>
                   </li>
                   <li>
-                    <a>All Product</a>
+                    <a href="<?= site_url('ProductController');?>" style="color: white;">All Product</a>
                   </li>
                   
                 </ul>
@@ -53,10 +53,10 @@
                 <h5 class="ud-widget-title">Layanan</h5>
                 <ul class="ud-widget-links">
                 <li>
-                    <a>Kalkulator</a>
+                    <a href="<?= site_url('Kalkulator');?>" style="color: white;">Kalkulator</a>
                   </li>
                   <li>
-                    <a>Pengajuan KPR</a>
+                    <a href="<?= site_url('PengajuanKprController');?>" style="color: white;">Pengajuan KPR</a>
                   </li>
                   
                 </ul>
@@ -74,15 +74,13 @@
           </div>
         </div>
       </div>
-      
+          <!-- ====== Footer End ====== -->
+      <div class="pt-2" style="width: auto; height: 64px; background: rgba(255, 194, 50, 0.98)">
+      <p class="float-right pr-3"><a href="#" class="btn btn-info">Back to top</a></p>
+      <p class="float-center pt-2 pl-3" style="text-align: left; text-bold">&copy;  Kelompok_8 IT Perbankan. All rights reserved</p> 
+      </div>
     </footer>
-    <!-- ====== Footer End ====== -->
-<div class="row" style="background: #FFC232;">
-<footer class="container pt-2 ">
-  <p class="float-right"><a href="#" class="btn btn-info">Back to top</a></p>
-  <p class="float-center" style="text-align: left; text-bold">&copy;  Kelompok_8 IT Perbankan. All rights reserved</p>
-  </footer>
-</div>
+
 
 </body>
 
