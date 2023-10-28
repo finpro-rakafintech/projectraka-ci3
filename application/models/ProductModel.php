@@ -7,7 +7,9 @@ class ProductModel extends CI_Model
     {
         return $this->db->get('product');
     }
+    public function getProductById($product_id)
+    {
+        $this->db->where('product_id', $product_id);
+        return $this->db->get('product')->row();
+    }
 }
-
-
-?>

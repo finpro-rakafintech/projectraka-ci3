@@ -67,6 +67,7 @@ $route['home'] = 'HomeController/index';
 $route['kalkulator'] = 'Kalkulator';
 $route['product'] = 'ProductController';
 $route['product_detail'] = 'ProductController/productDetail';
+$route['product_detailtes/(:num)'] = 'ProductController/detailProductTes/$1';
 $route['pengajuan_kpr'] = 'PengajuanKprController/index';
 $route['pengajuan_kpr2'] = 'PengajuanKprController/index2';
 
