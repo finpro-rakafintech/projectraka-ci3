@@ -2,7 +2,7 @@
 
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark custom-navbar-bg" style="margin-bottom: 20px; ">
         <a class="navbar-brand" href="<?= site_url(''); ?>">
-            <img src="<?= base_url('vendor/theme'); ?>/RakaLogo.png" width="160" height="50" class="d-inline-block align-top" alt="">
+        <img src="<?= base_url('assets')?>/img/footer2.png" width="200" alt="logo" />
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
