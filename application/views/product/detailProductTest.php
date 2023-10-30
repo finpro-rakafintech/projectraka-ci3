@@ -25,8 +25,48 @@
         <li class="list-group-item">Deskripsi: <?= $product_data->description; ?></li>
         <li class="list-group-item">Tipe: <?= $product_data->type; ?></li>
         <li class="list-group-item">Region ID: <?= $product_data->region_id; ?></li>
+        <li class="list-group-item">Lokasi: <?= $product_data->lokasi; ?></li>
       </ul>
     </div>
+
+    <div class="card">
+      <div class="card-header">
+        Lokasi Produk
+      </div>
+      <div class="card-body">
+        <div id="map" style="height: 400px;"></div>
+      </div>
+    </div>
+    <script>
+      function initMap() {
+        // Ambil latitude dan longitude dari PHP
+        var latitude = parseFloat(<?= $product_data->lokasi; ?>.split(",")[0]);
+        var longitude = parseFloat(<?= $product_data->lokasi; ?>.split(",")[1]);
+
+        // Buat objek peta
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {
+            lat: latitude,
+            lng: longitude
+          },
+          zoom: 15 // Sesuaikan level zoom sesuai kebutuhan
+        });
+
+        // Buat marker pada lokasi produk
+        var marker = new google.maps.Marker({
+          position: {
+            lat: latitude,
+            lng: longitude
+          },
+          map: map,
+          title: 'Lokasi Produk'
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAM6NpMw7GZ23eL_0eUKq1e3fHNSfZHv90&callback=initMap" async defer></script>
+
+
+
     <main role="main" class="mt-5 container">
       <h1 class="text-center">Estimasi Kredit</h1>
       <form method="post" action="" class="mt-4">
@@ -76,6 +116,8 @@
       }
 
       ?>
+
+
       <div class="mt-4">
         <h2>Ringkasan</h2>
         <p>Jsdsdumlah Pinjaman: Rp<?= number_format($loan_amount, 2); ?></p>
@@ -115,24 +157,24 @@
       }
     </script>
 
-    <?php
+
     if (isset($_POST['submit'])) {
-      // Input
-      $loan_amount = $_POST['loan_amount']; // Jumlah Pinjaman
-      $interest_rate = $_POST['interest_rate']; // Suku Bunga Tahunan
-      $loan_term = $_POST['loan_term']; // Lama Pinjaman
+    // Input
+    $loan_amount = $_POST['loan_amount']; // Jumlah Pinjaman
+    $interest_rate = $_POST['interest_rate']; // Suku Bunga Tahunan
+    $loan_term = $_POST['loan_term']; // Lama Pinjaman
 
-      // Logika Angsuran Perbulan
-      $interest_rate /= 100; // Mengubah persentase ke desimal
-      $monthly_interest_rate = $interest_rate / 12;
-      $loan_term_months = $loan_term * 12;
-      $monthly_payment = ($loan_amount * $monthly_interest_rate) / (1 - pow(1 + $monthly_interest_rate, -$loan_term_months));
+    // Logika Angsuran Perbulan
+    $interest_rate /= 100; // Mengubah persentase ke desimal
+    $monthly_interest_rate = $interest_rate / 12;
+    $loan_term_months = $loan_term * 12;
+    $monthly_payment = ($loan_amount * $monthly_interest_rate) / (1 - pow(1 + $monthly_interest_rate, -$loan_term_months));
 
-      // Menghitung ringkasan
-      $initial_loan_amount = $loan_amount; // Nilai pokok pinjaman awal
-      $initial_interest_payment = ($loan_amount * $monthly_interest_rate); // Nilai bunga pinjaman awal
-      $total_loan_payment = $monthly_payment * $loan_term_months; // Total pinjaman
-      $total_interest_payment = $total_loan_payment - $initial_loan_amount; // Total bunga pinjaman
+    // Menghitung ringkasan
+    $initial_loan_amount = $loan_amount; // Nilai pokok pinjaman awal
+    $initial_interest_payment = ($loan_amount * $monthly_interest_rate); // Nilai bunga pinjaman awal
+    $total_loan_payment = $monthly_payment * $loan_term_months; // Total pinjaman
+    $total_interest_payment = $total_loan_payment - $initial_loan_amount; // Total bunga pinjaman
     }
     ?>
 
@@ -209,5 +251,9 @@
         loanAmountInput.value = loanAmount.toFixed(2);
       });
     </script>
+
   </section>
+
+
+
 </main>
