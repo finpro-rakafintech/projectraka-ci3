@@ -531,3 +531,10 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+
+//CONFIG UPLOAD
+
+$config['upload_path'] = './uploads/';  // Ganti dengan lokasi direktori yang Anda inginkan
+$config['allowed_types'] = 'pdf|doc|docx|txt';  // Jenis file yang diizinkan
+$config['max_size'] = 2048;  // Ukuran maksimum file (dalam KB)

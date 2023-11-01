@@ -1,0 +1,11 @@
+nasabah_id 	PK	int(11)
+firstname	varchar(50)	
+lastname	varchar(50)		
+phone_number	varchar(13)
+no_kredit	varchar(16)
+npwp		varchar(16)	
+nik		varchar(16)
+user_id 	FK	int(11
+income		bigint(18)
+outcome		bigint(18)
+dokumen		varchar(255)

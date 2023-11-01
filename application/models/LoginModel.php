@@ -15,6 +15,7 @@ class LoginModel extends CI_Model {
             $row = $query->row();
 
             $result = array(
+                'user_id' => $row->user_id, // Mengambil user_id
                 'email' => $row->email,
                 'password' => $row->password,
                 'nama_user' => $row->fullname,
@@ -28,5 +29,3 @@ class LoginModel extends CI_Model {
     }
 
 }
-
-?>

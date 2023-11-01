@@ -71,6 +71,11 @@ $route['product_detailtes/(:num)'] = 'ProductController/detailProductTes/$1';
 $route['pengajuan_kpr'] = 'PengajuanKprController/index';
 $route['pengajuan_kpr2'] = 'PengajuanKprController/index2';
 
+// Route Nasabah
+$route['add_nasabah'] = 'NasabahController/add';
+
+$route['profile'] = 'ProfileController/index';
+
 
 
 $route['404_override'] = '';

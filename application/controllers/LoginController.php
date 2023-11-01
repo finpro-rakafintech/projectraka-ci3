@@ -22,21 +22,19 @@ class LoginController extends CI_Controller
 		if ($cek_level) {
 			if (password_verify($password, $cek_level['password'])) {
 				$data_session = array(
+					'user_id' => $cek_level['user_id'],
 					'nama_user' => $cek_level['fullname'],
 					'email' => $cek_level['email']
 				);
-
 				$this->session->set_userdata($data_session);
 
 				if ($cek_level['level'] == 'admin') {
-					// Akses admin
 					$this->session->set_userdata('masuk', TRUE);
 					$this->session->set_userdata('akses', 'admin');
 					$this->session->set_userdata('ses_email', $cek_level['email']);
 					$this->session->set_userdata('ses_nama', $cek_level['nama_admin']);
 					redirect('home');
 				} else {
-					// Akses User
 					$this->session->set_userdata('masuk', TRUE);
 					$this->session->set_userdata('akses', 'user');
 					$this->session->set_userdata('ses_email', $cek_level['email']);
@@ -44,15 +42,13 @@ class LoginController extends CI_Controller
 					redirect('home');
 				}
 			} else {
-				// Password salah
 				$url = site_url('login_page');
-				echo $this->session->set_flashdata('msg', 'Email atau Password Salah');
+				$this->session->set_flashdata('msg', 'Email atau Password Salah');
 				redirect($url);
 			}
 		} else {
-			// Email tidak ditemukan
 			$url = site_url('login_page');
-			echo $this->session->set_flashdata('msg', 'Email Tidak Ditemukan');
+			$this->session->set_flashdata('msg', 'Email Tidak Ditemukan');
 			redirect($url);
 		}
 	}
