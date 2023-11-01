@@ -48,10 +48,9 @@
             lat: latitude,
             lng: longitude
           },
-          zoom: 15 // You can adjust the initial zoom level as needed
+          zoom: 15
         });
 
-        // Create a marker at the specified coordinates
         const marker = new google.maps.Marker({
           position: {
             lat: latitude,
@@ -59,17 +58,12 @@
           },
           map: map,
           title: "Lokasi Produk",
-          // Add a custom label to the marker
           label: {
             text: "<?= $product_data->nm_product; ?>",
-            // Set the label position to the bottom right of the marker
             position: {
-              // 10 pixels from the bottom
               y: -10,
-              // 10 pixels from the right
               x: 10
             },
-            // Set the label style
             style: {
               backgroundColor: "#36A2EB",
               color: "#FFFFFF",
@@ -154,13 +148,6 @@
           $initial_interest_payment = ($loan_amount * $monthly_interest_rate); // Nilai bunga pinjaman awal
           $total_loan_payment = $monthly_payment * $loan_term_months; // Total pinjaman
           $total_interest_payment = $total_loan_payment - $initial_loan_amount; // Total bunga pinjaman
-
-          // // Menampilkan hasil
-          // echo "<h2>Hasil Perhitungan</h2>";
-          // echo "Jumlah Pinjaman: Rp" . number_format($loan_amount, 2) . "<br>";
-          // echo "Suku Bunga Tahunan: " . number_format($interest_rate * 100, 2) . "%<br>";
-          // echo "Lama Pinjaman: " . $loan_term . " tahun<br>";
-          // echo "Angsuran per Bulan: Rp" . number_format($monthly_payment, 2) . "<br>";
 
           echo "Jumlah Pinjaman: Rp" . number_format($loan_amount, 2) . "<br>";
           echo "Nilai Bunga Pinjaman Awal: Rp" . number_format($initial_interest_payment, 2) . "<br>";
