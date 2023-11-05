@@ -64,3 +64,29 @@
 
     </main> <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+
+<script>
+    function checkUserIdAndSubmit() {
+        const user_id = '<?= $this->session->userdata('user_id'); ?>';
+        const nasabahUrl = '<?= base_url('check_nasabah_existence'); ?>'; // Replace with your actual URL
+
+        // Perform an AJAX request to check if the user_id exists in the Nasabah table
+        $.ajax({
+            type: 'POST',
+            url: nasabahUrl,
+            data: {
+                user_id: user_id
+            },
+            success: function(response) {
+                if (response.exists) {
+                    // User already registered as a Nasabah, display a message
+                    $('#statusMessage').html('<div class="alert alert-danger">User already registered as a Nasabah.</div>');
+                } else {
+                    // User not registered, submit the form
+                    $('#nasabahForm').submit();
+                }
+            }
+        });
+    }
+</script>

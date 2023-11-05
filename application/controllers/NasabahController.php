@@ -36,6 +36,13 @@ class NasabahController extends CI_Controller
         } else {
             // Validasi berhasil, proses data dan dokumen
             $user_id = $this->session->userdata('user_id'); // Ambil user_id dari sesi
+            $existingNasabah = $this->NasabahModel->getNasabahByUserId($user_id);
+
+            if ($existingNasabah) {
+                // User already registered as a Nasabah, show a flash message
+                $this->session->set_flashdata('error_message', 'User already registered as a Nasabah.');
+                redirect('nasabah_cukuruk');
+            }
             $file_path = $this->uploadFile(); // Mengunggah file dan mendapatkan path
 
             if ($file_path !== false) {
@@ -86,6 +93,20 @@ class NasabahController extends CI_Controller
         } else {
             // Gagal mengunggah file
             return false;
+        }
+    }
+
+    public function check_nasabah_existence()
+    {
+        $user_id = $this->input->post('user_id');
+        $existingNasabah = $this->NasabahModel->getNasabahByUserId($user_id);
+
+        if ($existingNasabah) {
+            // User already registered as a Nasabah, return a JSON response
+            echo json_encode(['exists' => true]);
+        } else {
+            // User not registered, return a JSON response
+            echo json_encode(['exists' => false]);
         }
     }
 }
