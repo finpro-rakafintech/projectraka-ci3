@@ -1,5 +1,5 @@
 <form action="<?= base_url('add_nasabah'); ?>" method="post" enctype="multipart/form-data">
-    <main class="container mt-5">
+    <main class="container mt-5 pb-5">
         <h2>Input Data Nasabah</h2>
 
         <!-- Form fields for first name -->
@@ -61,10 +61,10 @@
             <label for="userfile">Upload Document</label>
             <input type="file" name="userfile" required>
         </div>
-
-    </main> <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary md-5">Submit</button>
+    
 </form>
-
+</main> 
 
 <script>
     function checkUserIdAndSubmit() {

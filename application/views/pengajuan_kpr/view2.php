@@ -1,134 +1,160 @@
-    <main>
-      <section class="section-pengajuan-kpr">
-        <div class="container">
+
+<main>
+      <section class="section-pengajuan-kpr pb-5">
+        <div class="container pt-5">
           <div class="form-title">
-            <img class="img-home" src="assets/icon/home-btn.png" alt="" />
-            <button>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="48"
-                height="48"
-                viewBox="0 0 48 48"
-                fill="none"
-              >
-                <path
-                  d="M17.1 5L14 8.1L29.9 24L14 39.9L17.1 43L36 24L17.1 5Z"
-                  fill="#797373"
-                />
-              </svg>
-            </button>
-            <h1>Pengajuan KPR</h1>
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+            <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+          </svg>
+          <h4>Pengajuan KPR</h4>
           </div>
-          <div class="container-pengajuan">
-            <div class="form-step">
-              <span class="current-step">Data Pengajuan</span>
-              <span>Upload Dokumen</span>
-              <span>Ringkasan</span>
-            </div>
-            <div class="form-input">
-              <form action="" class="cta-form gap-sm">
-                <div>
-                  <label for="">Nama Lengkap</label>
-                  <input type="text" placeholder="Mila Yuliani" />
-                </div>
-                <div>
-                  <label for="">Jenis Kelamin</label>
-                  <div class="accordion">
-                    <input type="text" placeholder="Perempuan" />
-                    <button>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="22"
-                        height="22"
-                        viewBox="0 0 25 25"
-                        fill="none"
-                      >
-                        <path
-                          d="M22.8969 8.60034L21.1173 6.90693L12.0529 15.679L3.15995 6.73309L1.34799 8.39173L12.0181 19.2705L22.8969 8.60034Z"
-                          fill="#111111"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                <div>
-                  <label for="">Pekerjaan</label>
-                  <div class="accordion">
-                    <input type="text" placeholder="Wiraswasta" />
-                    <button>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="22"
-                        height="22"
-                        viewBox="0 0 25 25"
-                        fill="none"
-                      >
-                        <path
-                          d="M22.8969 8.60034L21.1173 6.90693L12.0529 15.679L3.15995 6.73309L1.34799 8.39173L12.0181 19.2705L22.8969 8.60034Z"
-                          fill="#111111"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                <div>
-                  <label for="">Jumlah Tanggungan</label>
-                  <div class="accordion">
-                    <input type="text" placeholder="2 orang" />
-                    <button>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="22"
-                        height="22"
-                        viewBox="0 0 25 25"
-                        fill="none"
-                      >
-                        <path
-                          d="M22.8969 8.60034L21.1173 6.90693L12.0529 15.679L3.15995 6.73309L1.34799 8.39173L12.0181 19.2705L22.8969 8.60034Z"
-                          fill="#111111"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                <div>
-                  <label for="">Penghasilan (per bulan)</label>
-                  <div class="accordion">
-                    <input type="text" placeholder="Rp.15.0000.000" />
-                    <button>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="22"
-                        height="22"
-                        viewBox="0 0 25 25"
-                        fill="none"
-                      >
-                        <path
-                          d="M22.8969 8.60034L21.1173 6.90693L12.0529 15.679L3.15995 6.73309L1.34799 8.39173L12.0181 19.2705L22.8969 8.60034Z"
-                          fill="#111111"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                <div>
-                  <label for="">Nomor Handphone</label>
-                  <input type="text" placeholder="085703527549" />
-                </div>
-                <div>
-                  <label for="">Alamat</label>
-                  <input
-                    type="text"
-                    placeholder="Jl. Pinang, Jakarta Selatan"
-                  />
-                </div>
-                <div class="btn-progress">
-                  <a href="<?= site_url('pengajuan_kpr'); ?>" class="cta-btn cta-btn--back">Back</a>
-                  <a href="#next" class="cta-btn cta-btn--next">Next</a>
-                </div>
-              </form>
-            </div>
-          </div>
+  <ul class="nav justify-content-center nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Data Pengajuan</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Upload Dokumen</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Ringkasan</a>
+  </li>
+</ul>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+    
+  <form>
+  <!-- <div class="form-group">
+    <label for="exampleFormControlInput1">Email address</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+  </div> -->
+
+  <div class="form-group">
+    <label for="nama">Nama Lengkap</label>
+    <input class="form-control " type="text" placeholder="Masukan Nama Anda">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Jenis Kelamin</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>Laki-laki</option>
+      <option>Perempuan</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Pekerjaan</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>Mahasiswa</option>
+      <option>Bank</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Jumlah Tanggungan</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="nilai-pengajuan">Penghasilan (Perbulan)</label>
+    <input class="form-control " type="text" placeholder="Eg: Rp. 500.000.000">
+  </div>
+  <div class="form-group">
+    <label for="nilai-pengajuan">Alamat</label>
+    <textarea class="form-control " type="text" placeholder="Jakarta Barat, Indonesia"></textarea>
+  </div>
+
+
+</form>
+<a href="<?= site_url('PengajuanKprController/index')?>" class="btn btn-info">Previous</a>
+<button type="button" class="btn btn-warning">Simpan</button>
+  </div>
+
+
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+  <h5>Upload Dokumen</h5>
+  <form>
+        <div class="form-group">
+          <label for="nilai-pengajuan">KTP</label>
+        <div class="custom-file">
+        <input type="file" class="custom-file-input" id="customFile">
+        <label class="custom-file-label" for="customFile">Choose file</label>
         </div>
-      </section>
-    </main>
+        </div>
+        
+        <div class="form-group">
+          <label for="nilai-pengajuan">Kartu Keluarga</label>
+        <div class="custom-file">
+        <input type="file" class="custom-file-input" id="customFile">
+        <label class="custom-file-label" for="customFile">Choose file</label>
+        </div>
+        </div>
+        <div class="form-group">
+          <label for="nilai-pengajuan">SLip Gaji</label>
+        <div class="custom-file">
+        <input type="file" class="custom-file-input" id="customFile">
+        <label class="custom-file-label" for="customFile">Choose file</label>
+        </div>
+        </div>
+        <div class="form-group">
+          <label for="nilai-pengajuan">Kartu NPWP (optional)</label>
+        <div class="custom-file">
+        <input type="file" class="custom-file-input" id="customFile">
+        <label class="custom-file-label" for="customFile">Choose file</label>
+        </div>
+        </div>
+        <div class="form-group">
+          <label for="nilai-pengajuan">Kartu Rekening</label>
+        <div class="custom-file">
+        <input type="file" class="custom-file-input" id="customFile">
+        <label class="custom-file-label" for="customFile">Choose file</label>
+        </div>
+        </div>
+        <button type="button" class="btn btn-warning">Simpan</button>
+        </form>
+  </div>
+  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+  <div class="card w-100 justify-content-center">
+  <div class="card-body">
+    <h5 class="card-title">Aurora Residen lantai 5B Jakarta </h5>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+      <label class="form-check-label" for="exampleRadios1">
+        4 Produk KPR
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+      <label class="form-check-label" for="exampleRadios2">
+        Disetujui
+      </label>
+    </div>
+        <p class="card-text">Selamat Pengajuan KPR di Setujui</p>
+    <a href="#" class="btn btn-primary">Detail</a>
+  </div>
+  <hr>
+  <div class="card w-100 justify-content-center">
+  <div class="card-body">
+    <h5 class="card-title">Aurora Residen lantai 5B Jakarta </h5>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+      <label class="form-check-label" for="exampleRadios1">
+        4 Produk KPR
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+      <label class="form-check-label" for="exampleRadios2">
+        Disetujui
+      </label>
+    </div>
+        <p class="card-text">Selamat Pengajuan KPR di Setujui</p>
+    <a href="#" class="btn btn-primary">Detail</a>
+  </div>
+</div>
+  </div>
+</div>
+
+            </main>

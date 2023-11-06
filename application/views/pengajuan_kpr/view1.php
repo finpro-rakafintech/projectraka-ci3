@@ -78,6 +78,7 @@
 
 </form>
 <button type="button" class="btn btn-warning">Simpan</button>
+<a href="<?= site_url('PengajuanKprController/index2')?>" class="btn btn-info">Next</a>
   </div>
 
 
@@ -124,7 +125,7 @@
         </form>
   </div>
   <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-  <div class="card w-75 justify-content-center">
+  <div class="card w-100 justify-content-center">
   <div class="card-body">
     <h5 class="card-title">Aurora Residen lantai 5B Jakarta </h5>
     <div class="form-check">
@@ -140,7 +141,13 @@
       </label>
     </div>
         <p class="card-text">Selamat Pengajuan KPR di Setujui</p>
-    <a href="#" class="btn btn-primary"><Details></Details></a>
+    <a href="#" class="btn btn-primary">Detail</a>
+  </div>
+  <hr>
+  <div class="card w-100 justify-content-center">
+  <div class="card-body">
+    <h5 class="card-title">Aurora Residen lantai 5B Jakarta </h5>
+    <a href="#" class="btn btn-primary">Detail</a>
   </div>
 </div>
   </div>
