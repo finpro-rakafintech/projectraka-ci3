@@ -56,15 +56,21 @@
             <input type="text" name="user_id" class="form-control" value="<?= $this->session->userdata('user_id'); ?>" readonly>
         </div>
 
+
+        <div class="form-group">
+            <label for="product_id">Product ID</label>
+            <input type="text" name="product_id" class="form-control" value="<?= $this->input->get('product_id'); ?>" readonly>
+        </div>
+
         <!-- Form fields for document upload -->
         <div class="form-group">
             <label for="userfile">Upload Document</label>
             <input type="file" name="userfile" required>
         </div>
         <button type="submit" class="btn btn-primary md-5">Submit</button>
-    
+
 </form>
-</main> 
+</main>
 
 <script>
     function checkUserIdAndSubmit() {

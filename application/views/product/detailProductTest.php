@@ -161,6 +161,8 @@
   </section>
 
 
+
+
 </main>
 <script>
   const interestRateInput = document.querySelector('input[name="interest_rate"]');
@@ -254,3 +256,11 @@
   });
 </script>
 </section>
+
+<form action="<?= base_url('add_nasabah'); ?>" method="post" enctype="multipart/form-data">
+  <!-- ... (Form fields) ... -->
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+  <!-- Add the "Beli" button with the product_id parameter in the URL -->
+  <a href="<?= base_url('add_nasabah?product_id=' . $product_data->product_id); ?>" class="btn btn-success">Beli</a>
+</form>

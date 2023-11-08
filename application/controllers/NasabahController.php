@@ -7,12 +7,21 @@ class NasabahController extends CI_Controller
     {
         parent::__construct();
         $this->load->model('NasabahModel');
+        $this->load->model('PurchaseModel');
         $this->load->library('form_validation');
         $this->load->library('session');
     }
 
     public function add()
     {
+        $user_id = $this->session->userdata('user_id');
+        $existingNasabah = $this->NasabahModel->getNasabahByUserId($user_id);
+
+        if ($existingNasabah) {
+            // User already registered as a Nasabah, redirect to nasabah_cukuruk
+            redirect('nasabah_cukuruk');
+        }
+
         $this->form_validation->set_rules('firstname', 'First Name', 'trim|required');
         $this->form_validation->set_rules('lastname', 'Last Name', 'trim|required');
         $this->form_validation->set_rules('phone_number', 'Phone Number', 'trim|required');
@@ -23,27 +32,19 @@ class NasabahController extends CI_Controller
         $this->form_validation->set_rules('outcome', 'Outcome', 'trim|required');
 
         if ($this->form_validation->run() === FALSE) {
-            // Validasi gagal, tampilkan pesan kesalahan
-            $this->load->view('layout/header'); // Tampilkan header
-            $this->load->view('layout/navbar'); // Tampilkan navbar
+            // Validation failed, display error message
+            $data['user_id'] = $user_id;
+            $this->load->view('layout/header');
+            $this->load->view('layout/navbar');
             if (!$this->session->userdata('masuk')) {
                 redirect('login_page');
             }
-            $data['user_id'] = $this->session->userdata('user_id');
-
-            $this->load->view('nasabah/add_nasabah', $data); // Kirim user_id ke view
+            $this->load->view('nasabah/add_nasabah', $data);
             $this->load->view('layout/footer');
         } else {
-            // Validasi berhasil, proses data dan dokumen
-            $user_id = $this->session->userdata('user_id'); // Ambil user_id dari sesi
-            $existingNasabah = $this->NasabahModel->getNasabahByUserId($user_id);
-
-            if ($existingNasabah) {
-                // User already registered as a Nasabah, show a flash message
-                $this->session->set_flashdata('error_message', 'User already registered as a Nasabah.');
-                redirect('nasabah_cukuruk');
-            }
-            $file_path = $this->uploadFile(); // Mengunggah file dan mendapatkan path
+            $product_id = $this->input->post('product_id');
+            // Validation succeeded, process data and document upload
+            $file_path = $this->uploadFile();
 
             if ($file_path !== false) {
                 $data = array(
@@ -57,31 +58,70 @@ class NasabahController extends CI_Controller
                     'outcome' => $this->input->post('outcome'),
                     'dokumen' => $file_path,
                     'user_id' => $user_id,
+                    'product_id' => $product_id
                 );
 
                 if ($this->NasabahModel->addNasabah($data)) {
+                    $nasabah_id = $this->db->insert_id();
+                    $product_id = $this->input->post('product_id');
                     // Data nasabah berhasil ditambahkan, lakukan pengalihan atau tampilkan pesan sukses
-                    redirect('nasabah_list');
+                    $product_data = array(
+                        'product_id' => $product_id,
+                        'region_id' => '1',
+                        'nasabah_id' => $nasabah_id, // Gunakan nasabah_id yang diterima dari argumen
+                        // Sesuaikan dengan data yang diperlukan
+
+
+                    );
+                    $this->PurchaseModel->addPurchase($product_data);
+
+                    redirect('status_pengajuan');
                 } else {
-                    // Gagal menyimpan data nasabah, tampilkan pesan kesalahan
-                    $this->load->view('layout/header'); // Tampilkan header
-                    $this->load->view('layout/navbar'); // Tampilkan navbar
-                    $data['user_id'] = $user_id; // Kirim user_id ke view dalam kasus error
-                    $this->load->view('nasabah/add_nasabah', $data); // Kirim user_id ke view
+                    // Failed to save nasabah data, display error message
+                    $this->load->view('layout/header');
+                    $this->load->view('layout/navbar');
+                    $data['user_id'] = $user_id;
+                    $this->load->view('nasabah/add_nasabah', $data);
                     $this->load->view('layout/footer');
                 }
             } else {
-                // Gagal mengunggah file, tampilkan pesan kesalahan
-                echo "Gagal mengunggah file.";
+                // Failed to upload file, display error message
+                echo "Failed to upload file.";
             }
         }
     }
 
+    // public function add_nasabah_process()
+    // {
+    //     // ... (Validasi dan pengolahan data nasabah seperti yang sudah Anda implementasikan sebelumnya)
+
+    //     // Data nasabah telah berhasil disimpan
+    //     // Selanjutnya, Anda dapat menyimpan data ke dalam tabel 'purchase'
+    //     $nasabah_id = $this->db->insert_id(); // Mengambil ID nasabah yang baru saja disimpan
+    //     $product_id = $this->input->post('product_id');
+    //     // Data yang akan disimpan ke dalam tabel 'purchase'
+    //     $purchase_data = array(
+    //         'order_status' => 'proses', // Sesuaikan dengan status yang sesuai
+    //         'date_ordered' => date('Y-m-d'),
+    //         'total_price' => '1', // Sesuaikan dengan total harga yang sesuai
+    //         'region_id' => '1', // Sesuaikan dengan region yang sesuai
+    //         'product_id' => $product_id, // Sesuaikan dengan product_id yang sesuai
+    //         'nasabah_id' => $nasabah_id, // Menggunakan ID nasabah yang baru saja disimpan
+    //     );
+
+    //     $this->load->model('PurchaseModel'); // Load model PurchaseModel
+    //     $purchase_id = $this->PurchaseModel->addPurchase($purchase_data);
+    //     $this->PurchaseModel->addPurchase($purchase_data);
+
+    //     // Redirect atau tampilkan pesan sukses sesuai kebutuhan
+    // }
+
+
     public function uploadFile()
     {
-        $config['upload_path'] = './uploads/'; // Direktori penyimpanan file
-        $config['allowed_types'] = 'txt|png|jpg|jpeg'; // Jenis file yang diizinkan
-        $config['max_size'] = 2048; // Maksimum ukuran file dalam kilobyte (2MB)
+        $config['upload_path'] = './uploads/';
+        $config['allowed_types'] = 'txt|png|jpg|jpeg';
+        $config['max_size'] = 2048;
 
         $this->load->library('upload', $config);
 
@@ -91,7 +131,6 @@ class NasabahController extends CI_Controller
 
             return $file_path;
         } else {
-            // Gagal mengunggah file
             return false;
         }
     }
