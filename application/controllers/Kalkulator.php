@@ -1,18 +1,6 @@
 <?php
 class Kalkulator extends CI_Controller
 {
-
-    public function __construct()
-    {
-        parent::__construct();
-
-        // Validasi jika user belum login
-        if ($this->session->userdata('masuk') != TRUE) {
-            $url = base_url();
-            redirect($url);
-        }
-    }
-
     public function index()
     {
         $include = array(

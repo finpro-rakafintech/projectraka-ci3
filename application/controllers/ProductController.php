@@ -8,10 +8,10 @@ class ProductController extends CI_Controller
         parent::__construct();
 
         // Validasi jika user belum login
-        if ($this->session->userdata('masuk') != TRUE) {
-            $url = base_url();
-            redirect($url);
-        }
+        // if ($this->session->userdata('masuk') != TRUE) {
+        //     $url = base_url();
+        //     redirect($url);
+        // }
 
         $this->load->model('ProductModel');
         $this->load->library('session');
