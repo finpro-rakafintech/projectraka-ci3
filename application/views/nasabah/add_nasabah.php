@@ -64,8 +64,25 @@
 
         <!-- Form fields for document upload -->
         <div class="form-group">
-            <label for="userfile">Upload Document</label>
-            <input type="file" name="userfile" required>
+            <label for="kpt">Upload KTP</label>
+            <input type="file" name="ktp" required>
+        </div>
+
+        <div class="form-group">
+            <label for="kk">Upload Kartu Keluarga</label>
+            <input type="file" name="kk" required>
+        </div>
+        <div class="form-group">
+            <label for="npwp">Upload Kartu NPWP</label>
+            <input type="file" name="npwp" required>
+        </div>
+        <div class="form-group">
+            <label for="slip">Upload Slip Gaji/Penghasilan 1 Bulan Terakhir</label>
+            <input type="file" name="slip" required>
+        </div>
+        <div class="form-group">
+            <label for="akta">Upload Akta Pisah Harta</label>
+            <input type="file" name="akta" required>
         </div>
         <button type="submit" class="btn btn-primary md-5">Submit</button>
 

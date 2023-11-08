@@ -44,10 +44,10 @@ class NasabahController extends CI_Controller
         } else {
             $product_id = $this->input->post('product_id');
             // Validation succeeded, process data and document upload
-            $file_path = $this->uploadFile();
+            $file_paths = $this->uploadFile();
 
-            if ($file_path !== false) {
-                $data = array(
+            if ($file_paths !== false) {
+                $data_nasabah = array(
                     'firstname' => $this->input->post('firstname'),
                     'lastname' => $this->input->post('lastname'),
                     'phone_number' => $this->input->post('phone_number'),
@@ -56,25 +56,24 @@ class NasabahController extends CI_Controller
                     'nik' => $this->input->post('nik'),
                     'income' => $this->input->post('income'),
                     'outcome' => $this->input->post('outcome'),
-                    'dokumen' => $file_path,
+                    'dok_ktp' => $file_paths[0], // Menggunakan dokumen pertama
+                    'dok_kk' => $file_paths[1], // Menggunakan dokumen kedua
+                    'dok_npwp' => $file_paths[2],
+                    'dok_penghasilan' => $file_paths[3],
+                    'dok_aktapisah' => $file_paths[4],
                     'user_id' => $user_id,
                     'product_id' => $product_id
                 );
 
-                if ($this->NasabahModel->addNasabah($data)) {
+                if ($this->NasabahModel->addNasabah($data_nasabah)) {
                     $nasabah_id = $this->db->insert_id();
-                    $product_id = $this->input->post('product_id');
-                    // Data nasabah berhasil ditambahkan, lakukan pengalihan atau tampilkan pesan sukses
                     $product_data = array(
                         'product_id' => $product_id,
                         'region_id' => '1',
-                        'nasabah_id' => $nasabah_id, // Gunakan nasabah_id yang diterima dari argumen
+                        'nasabah_id' => $nasabah_id,
                         // Sesuaikan dengan data yang diperlukan
-
-
                     );
                     $this->PurchaseModel->addPurchase($product_data);
-
                     redirect('status_pengajuan');
                 } else {
                     // Failed to save nasabah data, display error message
@@ -91,32 +90,6 @@ class NasabahController extends CI_Controller
         }
     }
 
-    // public function add_nasabah_process()
-    // {
-    //     // ... (Validasi dan pengolahan data nasabah seperti yang sudah Anda implementasikan sebelumnya)
-
-    //     // Data nasabah telah berhasil disimpan
-    //     // Selanjutnya, Anda dapat menyimpan data ke dalam tabel 'purchase'
-    //     $nasabah_id = $this->db->insert_id(); // Mengambil ID nasabah yang baru saja disimpan
-    //     $product_id = $this->input->post('product_id');
-    //     // Data yang akan disimpan ke dalam tabel 'purchase'
-    //     $purchase_data = array(
-    //         'order_status' => 'proses', // Sesuaikan dengan status yang sesuai
-    //         'date_ordered' => date('Y-m-d'),
-    //         'total_price' => '1', // Sesuaikan dengan total harga yang sesuai
-    //         'region_id' => '1', // Sesuaikan dengan region yang sesuai
-    //         'product_id' => $product_id, // Sesuaikan dengan product_id yang sesuai
-    //         'nasabah_id' => $nasabah_id, // Menggunakan ID nasabah yang baru saja disimpan
-    //     );
-
-    //     $this->load->model('PurchaseModel'); // Load model PurchaseModel
-    //     $purchase_id = $this->PurchaseModel->addPurchase($purchase_data);
-    //     $this->PurchaseModel->addPurchase($purchase_data);
-
-    //     // Redirect atau tampilkan pesan sukses sesuai kebutuhan
-    // }
-
-
     public function uploadFile()
     {
         $config['upload_path'] = './uploads/';
@@ -125,11 +98,32 @@ class NasabahController extends CI_Controller
 
         $this->load->library('upload', $config);
 
-        if ($this->upload->do_upload('userfile')) {
-            $data = $this->upload->data();
-            $file_path = 'uploads/' . $data['file_name'];
+        $file_paths = array(); // Definisikan variabel $file_paths sebelum menggunakannya
 
-            return $file_path;
+        if ($this->upload->do_upload('ktp')) {
+            $data = $this->upload->data();
+            $file_paths[] = 'uploads/' . $data['file_name'];
+        }
+
+        if ($this->upload->do_upload('kk')) {
+            $data = $this->upload->data();
+            $file_paths[] = 'uploads/' . $data['file_name'];
+        }
+        if ($this->upload->do_upload('npwp')) {
+            $data = $this->upload->data();
+            $file_paths[] = 'uploads/' . $data['file_name'];
+        }
+        if ($this->upload->do_upload('slip')) {
+            $data = $this->upload->data();
+            $file_paths[] = 'uploads/' . $data['file_name'];
+        }
+        if ($this->upload->do_upload('akta')) {
+            $data = $this->upload->data();
+            $file_paths[] = 'uploads/' . $data['file_name'];
+        }
+
+        if (!empty($file_paths)) {
+            return $file_paths;
         } else {
             return false;
         }
