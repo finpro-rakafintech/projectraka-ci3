@@ -22,7 +22,7 @@
     <div class="container">
         <div class="row">
             <div class="col-6">
-                <h3 class="mb-3">Popular Properties </h3>
+                <h3 class="mb-3">Properti Terbaru </h3>
             </div>
             <div class="col-6 text-right">
                 <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
@@ -34,152 +34,44 @@
             </div>
             <div class="col-12">
                 <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
-
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="row">
-                                <div class="col-md-4 mb-3">
-                                    <div class="card rounded">
-                                        <img class="img-fluid rounded" alt="100%x280" src="<?php echo base_url('assets')?>/img/badge_rumah.png">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Rose House</h4>
-                                            <span>Jakarta Utara, Indonesia</span><br>
-                                            <span>250 Juta</span>
-                                            <br>
-                                            <div class="col-15 text-right">
-                                            <button  style="width: 102px; height: 44px; background: #FFC232; border-radius: 10px;">Lihat Detail</button>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                    <img class="img-fluid rounded" alt="100%x280" src="<?php echo base_url('assets')?>/img/badge_rumah.png">
-                                        <div class="card-body">
-                                        <h4 class="card-title">Rose House</h4>
-                                            <span>Jakarta Utara, Indonesia</span><br>
-                                            <span>250 Juta</span>
-                                            <br>
-                                            <div class="col-15 text-right">
-                                            <button  style="width: 102px; height: 44px; background: #FFC232; border-radius: 10px;">Lihat Detail</button>
+                                <?php foreach ($v_product->result() as $row) : ?>
+                                    <div class="col-md-3 mb-5 mt-3 pb-5">
+                                        <div class="card mb-6 pb-5">
+                                            <img src="<?= base_url('assets/img'); ?>/badge_rumah.png" class="card-img-top">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><?= word_limiter($row->nm_product, 5,'...');  ?></h5>
+                                                <p class="card-text">Deskripsi</p>
+                                                <h5 class="card-title">Rp.  <?= rupiah($row->price); ?></h5>
+                                                <a href="<?= site_url('product_detailtes/' . $row->product_id); ?>" class="btn btn-warning">Lihat Detail</a>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                    <img class="img-fluid rounded" alt="100%x280" src="<?php echo base_url('assets')?>/img/badge_rumah.png">
-                                        <div class="card-body">
-                                        <h4 class="card-title">Rose House</h4>
-                                            <span>Jakarta Utara, Indonesia</span><br>
-                                            <span>250 Juta</span>
-                                            <br>
-                                            <div class="col-15 text-right">
-                                            <button  style="width: 102px; height: 44px; background: #FFC232; border-radius: 10px;">Lihat Detail</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
+                                <?php endforeach; ?>
                             </div>
-                        </div>
-                        <div class="carousel-item">
-                        <div class="row">
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid rounded" alt="100%x280" src="<?php echo base_url('assets')?>/img/badge_rumah.png">
-                                        <div class="card-body">
-                                        <h4 class="card-title">Rose House</h4>
-                                            <span>Jakarta Utara, Indonesia</span><br>
-                                            <span>250 Juta</span>
-                                            <br>
-                                            <div class="col-15 text-right">
-                                            <button  style="width: 102px; height: 44px; background: #FFC232; border-radius: 10px;">Lihat Detail</button>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                    <img class="img-fluid rounded" alt="100%x280" src="<?php echo base_url('assets')?>/img/badge_rumah.png">
-                                        <div class="card-body">
-                                        <h4 class="card-title">Rose House</h4>
-                                            <span>Jakarta Utara, Indonesia</span><br>
-                                            <span>250 Juta</span>
-                                            <br>
-                                            <div class="col-15 text-right">
-                                            <button  style="width: 102px; height: 44px; background: #FFC232; border-radius: 10px;">Lihat Detail</button>
+                          </div>
+                         
+                          <div class="carousel-item">
+                          <div class="row">
+                                <?php foreach ($v_product->result() as $row) : ?>
+                                    <div class="col-md-3 mb-5 mt-3 pb-5">
+                                        <div class="card mb-5" style="width: 18rem;">
+                                            <img src="<?= base_url('assets/img'); ?>/badge_rumah.png" class="card-img-top">
+                                            <div class="card-body ">
+                                                <h5 class="card-title"><?= word_limiter($row->nm_product, 5,'...'); ?></h5>
+                                                <p class="card-text">Deskripsi</p>
+                                                <h5 class="card-title">Rp.  <?= rupiah($row->price); ?></h5>
+                                                <a href="<?= site_url('product_detailtes/' . $row->product_id); ?>" class="btn btn-warning">Lihat Detail</a>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                    <img class="img-fluid rounded" alt="100%x280" src="<?php echo base_url('assets')?>/img/badge_rumah.png">
-                                        <div class="card-body">
-                                        <h4 class="card-title">Rose House</h4>
-                                            <span>Jakarta Utara, Indonesia</span><br>
-                                            <span>250 Juta</span>
-                                            <br>
-                                            <div class="col-15 text-right">
-                                            <button  style="width: 102px; height: 44px; background: #FFC232; border-radius: 10px;">Lihat Detail</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
+                                <?php endforeach; ?>
                             </div>
-                        </div>
-                        <div class="carousel-item">
-                        <div class="row">
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid rounded" alt="100%x280" src="<?php echo base_url('assets')?>/img/badge_rumah.png">
-                                        <div class="card-body">
-                                        <h4 class="card-title">Rose House</h4>
-                                            <span>Jakarta Utara, Indonesia</span><br>
-                                            <span>250 Juta</span>
-                                            <br>
-                                            <div class="col-15 text-right">
-                                            <button  style="width: 102px; height: 44px; background: #FFC232; border-radius: 10px;">Lihat Detail</button>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                    <img class="img-fluid rounded" alt="100%x280" src="<?php echo base_url('assets')?>/img/badge_rumah.png">
-                                        <div class="card-body">
-                                        <h4 class="card-title">Rose House</h4>
-                                            <span>Jakarta Utara, Indonesia</span><br>
-                                            <span>250 Juta</span>
-                                            <br>
-                                            <div class="col-15 text-right">
-                                            <button  style="width: 102px; height: 44px; background: #FFC232; border-radius: 10px;">Lihat Detail</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                    <img class="img-fluid rounded" alt="100%x280" src="<?php echo base_url('assets')?>/img/badge_rumah.png">
-                                        <div class="card-body">
-                                        <h4 class="card-title">Rose House</h4>
-                                            <span>Jakarta Utara, Indonesia</span><br>
-                                            <span>250 Juta</span>
-                                            <br>
-                                            <div class="col-15 text-right">
-                                            <button  style="width: 102px; height: 44px; background: #FFC232; border-radius: 10px;">Lihat Detail</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
                             </div>
+                            
+                        
                         </div>
                     </div>
                 </div>
@@ -188,11 +80,7 @@
     </div>
 </section>
   
-
-
     <!-- START THE FEATURETTES -->
-
-    <hr class="featurette-divider">
     <div class="container">
         <div class="row">
             <div class="col-6">
