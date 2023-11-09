@@ -18,7 +18,7 @@
   <!-- Marketing messaging and featurettes
       ================================================== -->
   <!-- Wrap the rest of the page in another container to center all the content. -->
-  <section class="pt-5 pb-1">
+  <section class="pt-5 pb-5">
     <div class="container">
         <div class="row">
             <div class="col-6">
@@ -38,11 +38,11 @@
                         <div class="carousel-item active">
                             <div class="row">
                                 <?php foreach ($v_product->result() as $row) : ?>
-                                    <div class="col-md-3 mb-5 mt-3">
-                                        <div class="card mb-5">
+                                    <div class="col-md-3 mb-5 mt-3 pb-5">
+                                        <div class="card mb-6 pb-5">
                                             <img src="<?= base_url('assets/img'); ?>/badge_rumah.png" class="card-img-top">
                                             <div class="card-body">
-                                                <h5 class="card-title"><?= $row->nm_product; ?></h5>
+                                                <h5 class="card-title"><?= word_limiter($row->nm_product, 5,'...');  ?></h5>
                                                 <p class="card-text">Deskripsi</p>
                                                 <h5 class="card-title">Rp.  <?= rupiah($row->price); ?></h5>
                                                 <a href="<?= site_url('product_detailtes/' . $row->product_id); ?>" class="btn btn-warning">Lihat Detail</a>
@@ -56,11 +56,11 @@
                           <div class="carousel-item">
                           <div class="row">
                                 <?php foreach ($v_product->result() as $row) : ?>
-                                    <div class="col-md-3 mb-5 mt-3">
-                                        <div class="card mb-5">
+                                    <div class="col-md-3 mb-5 mt-3 pb-5">
+                                        <div class="card mb-5" style="width: 18rem;">
                                             <img src="<?= base_url('assets/img'); ?>/badge_rumah.png" class="card-img-top">
-                                            <div class="card-body">
-                                                <h5 class="card-title"><?= $row->nm_product; ?></h5>
+                                            <div class="card-body ">
+                                                <h5 class="card-title"><?= word_limiter($row->nm_product, 5,'...'); ?></h5>
                                                 <p class="card-text">Deskripsi</p>
                                                 <h5 class="card-title">Rp.  <?= rupiah($row->price); ?></h5>
                                                 <a href="<?= site_url('product_detailtes/' . $row->product_id); ?>" class="btn btn-warning">Lihat Detail</a>
@@ -70,7 +70,7 @@
                                 <?php endforeach; ?>
                             </div>
                             </div>
-                        </div>
+                        
                         
                         </div>
                     </div>

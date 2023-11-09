@@ -10,6 +10,7 @@ class PagesController extends CI_Controller
 		$this->load->model('LoginModel');
 		$this->load->library('form_validation');
 		$this->load->library('session');
+		$this->load->helper('text');
 		$this->load->model('ProductModel');
 	}
 
