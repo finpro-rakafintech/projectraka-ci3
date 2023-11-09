@@ -21,6 +21,7 @@
         <button type="submit" name="submit" class="btn btn-warning">CEK</button>
     </form>
 </main>
+<section class="container pr-5 mt-5 mb-5">
     <script>
         const interestRateInput = document.querySelector('input[name="interest_rate"]');
         const loanTermInput = document.querySelector('input[name="loan_term"]');
@@ -146,3 +147,5 @@
             }
         });
     </script>
+
+    </section>

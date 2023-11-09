@@ -15,22 +15,38 @@
   <section class="section-detail">
     <div class="container">
       <h1 class="display-7 underline">Detail Asset</h1>
-      <ul class="list-group">
-        <!-- Product Details -->
-        <li class="list-group-item">Kode Asset: <?= $product_data->product_id; ?></li>
-        <li class="list-group-item">Nama Produk: <?= $product_data->nm_product; ?></li>
-        <li class="list-group-item">Harga: Rp. <?= $product_data->price; ?></li>
-        <li class="list-group-item">Luas Bangunan: <?= $product_data->luas_bangunan; ?> m2</li>
-        <li class="list-group-item">Luas Tanah: <?= $product_data->luas_tanah; ?> m2</li>
-        <li class="list-group-item">Jumlah Kamar Tidur: <?= $product_data->jum_kamartidur; ?></li>
-        <li class="list-group-item">Jumlah Kamar Mandi: <?= $product_data->jum_kamarmandi; ?></li>
-        <li class="list-group-item">Jumlah Garasi: <?= $product_data->jum_garasi; ?></li>
-        <li class="list-group-item">Deskripsi: <?= $product_data->description; ?></li>
-        <li class="list-group-item">Tipe: <?= $product_data->type; ?></li>
-        <li class="list-group-item">Region ID: <?= $product_data->region_id; ?></li>
-        <li class="list-group-item">Lokasi: <?= $product_data->lokasi; ?></li>
-      </ul>
+
+  <div class="card mb-3" style="max-width: auto;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="<?= base_url('assets/img'); ?>/badge_rumah.png"  class="img-fluid rounded-start" alt="...">
     </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Kode Aset : <?= $product_data->product_id; ?></h5>
+        <p class="card-text"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+          <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
+          <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
+        </svg><b> <?= $product_data->nm_product; ?></b></p>
+        <p class="card-text"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cash" viewBox="0 0 16 16">
+        <path d="M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+        <path d="M0 4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V6a2 2 0 0 1-2-2H3z"/>
+      </svg> <?= rupiah($product_data->price); ?></p>
+        <p class="card-text">Luas Bangunan: <?= $product_data->luas_bangunan; ?> m2</p>
+        <p class="card-text">Luas Tanah: <?= $product_data->luas_tanah; ?> m2</p>
+        <p class="card-text">Jumlah Kamar Tidur: <?= $product_data->jum_kamartidur; ?></p>
+        <p class="card-text">Jumlah Kamar Mandi: <?= $product_data->jum_kamarmandi; ?></p>
+        <p class="card-text">Jumlah Garasi: <?= $product_data->jum_garasi; ?></p>
+        <p class="card-text">Deskripsi: <?= $product_data->description; ?></p>
+        <p class="card-text">Tipe: <?= $product_data->type; ?></p>
+        <p class="card-text">Region ID: <?= $product_data->region_id; ?></p>
+        <p class="card-text">Lokasi: <?= $product_data->lokasi; ?></p>
+        
+       
+    </div>
+  </div>
+</div>
+
   </section>
   <section class="section-map mt-5 container">
     <h1 class="display-4 underline">Lokasi Product</h1>
@@ -118,7 +134,7 @@
     </form>
   </section>
 
-  <section class="container mt-5">
+  <section class="container pr-5 mt-5">
     <div class="row">
       <div class="col-md-6">
         <h2>Hasil Perhitungan</h2>
@@ -194,7 +210,7 @@
 </script>
 
 
-
+<section class="container pr-5 mt-5">
 <canvas id="pieChart" width="400" height="400"></canvas>
 
 
@@ -258,7 +274,7 @@
   });
 </script>
 </section>
-
+<section class="container pr-5 mt-5 mb-5">
 <form action="<?= base_url('add_nasabah'); ?>" method="post" enctype="multipart/form-data">
   <!-- ... (Form fields) ... -->
   <button type="submit" class="btn btn-primary">Submit</button>
@@ -266,3 +282,13 @@
   <!-- Add the "Beli" button with the product_id parameter in the URL -->
   <a href="<?= base_url('add_nasabah?product_id=' . $product_data->product_id); ?>" class="btn btn-success">Beli</a>
 </form>
+</section>
+
+<script>
+  const collapseElementList = [].slice.call(document.querySelectorAll('.collapse'))
+const collapseList = collapseElementList.map((collapseEl) => {
+  return new mdb.Collapse(collapseEl, {
+    toggle: false,
+  });
+});
+</script>
