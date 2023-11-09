@@ -65,24 +65,24 @@
         <!-- Form fields for document upload -->
         <div class="form-group">
             <label for="kpt">Upload KTP</label>
-            <input type="file" name="ktp" required>
+            <input type="file"  class="form-control" name="ktp" required>
         </div>
 
         <div class="form-group">
             <label for="kk">Upload Kartu Keluarga</label>
-            <input type="file" name="kk" required>
+            <input type="file" class="form-control" name="kk" required>
         </div>
         <div class="form-group">
             <label for="npwp">Upload Kartu NPWP</label>
-            <input type="file" name="npwp" required>
+            <input type="file" class="form-control" name="npwp" required>
         </div>
         <div class="form-group">
             <label for="slip">Upload Slip Gaji/Penghasilan 1 Bulan Terakhir</label>
-            <input type="file" name="slip" required>
+            <input type="file" class="form-control" name="slip" required>
         </div>
         <div class="form-group">
             <label for="akta">Upload Akta Pisah Harta</label>
-            <input type="file" name="akta" required>
+            <input type="file" class="form-control" name="akta" required>
         </div>
         <button type="submit" class="btn btn-primary md-5">Submit</button>
 

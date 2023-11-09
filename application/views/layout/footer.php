@@ -62,15 +62,7 @@
                 </ul>
               </div>
             </div>
-            <div class="col-xl-3 col-lg-6 col-md-8 col-sm-10 pt-3" >
-              <div class="ud-widget">
-                <h5 class="ud-widget-title"></h5>
-                <ul class="ud-widget-brands">
-                <a href="#" class="btn btn-warning">Register</a></br></br>
-                <a href="#" class="btn btn-light">Login</a>
-                </ul>
-              </div>
-            </div>
+       
           </div>
         </div>
       </div>
