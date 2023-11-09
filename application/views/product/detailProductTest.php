@@ -1,8 +1,8 @@
 <main>
   <section class="section-img">
-    <div class="container">
+    <div class="container mt-5">
       <!-- Product Title -->
-      <h1 class="display-4"><?= $product_data->nm_product; ?></h1>
+      <h3 class="display-8"><?= $product_data->nm_product; ?></h3>
       <!-- Product ID -->
       <h2 class="lead">Product ID: <?= $product_data->product_id; ?></h2>
       <div id="carouselExample" class="carousel slide" data-ride="carousel">
@@ -14,7 +14,7 @@
   </section>
   <section class="section-detail">
     <div class="container">
-      <h1 class="display-4 underline">Detail Asset</h1>
+      <h1 class="display-7 underline">Detail Asset</h1>
       <ul class="list-group">
         <!-- Product Details -->
         <li class="list-group-item">Kode Asset: <?= $product_data->product_id; ?></li>
@@ -128,6 +128,7 @@
         }
         ?>
       </div>
+      
       <div class="col-md-6">
         <h2>Ringkasan</h2>
         <?php
@@ -158,6 +159,7 @@
         ?>
       </div>
     </div>
+    
   </section>
 
 

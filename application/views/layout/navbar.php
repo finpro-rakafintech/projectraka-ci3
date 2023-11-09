@@ -21,9 +21,9 @@
                 <li class="nav-item">
                     <a class="nav-link mr-3" href="<?= site_url('kalkulator'); ?>">Kalkulator</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link mr-3" href="<?= site_url('add_nasabah'); ?>">Pengajuan KPR</a>
-                </li>
+                </li> -->
             </ul>
             <?php if ($this->session->userdata('masuk') == TRUE) { ?>
                 <form class="form-inline mt-2 mt-md-0">
