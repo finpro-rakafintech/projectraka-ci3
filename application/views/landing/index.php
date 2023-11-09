@@ -44,7 +44,7 @@
                                             <div class="card-body">
                                                 <h5 class="card-title"><?= $row->nm_product; ?></h5>
                                                 <p class="card-text">Deskripsi</p>
-                                                <h5 class="card-title">Rp. <?= $row->price; ?></h5>
+                                                <h5 class="card-title">Rp.  <?= rupiah($row->price); ?></h5>
                                                 <a href="<?= site_url('product_detailtes/' . $row->product_id); ?>" class="btn btn-warning">Lihat Detail</a>
                                             </div>
                                         </div>
@@ -62,7 +62,7 @@
                                             <div class="card-body">
                                                 <h5 class="card-title"><?= $row->nm_product; ?></h5>
                                                 <p class="card-text">Deskripsi</p>
-                                                <h5 class="card-title">Rp. <?= $row->price; ?></h5>
+                                                <h5 class="card-title">Rp.  <?= rupiah($row->price); ?></h5>
                                                 <a href="<?= site_url('product_detailtes/' . $row->product_id); ?>" class="btn btn-warning">Lihat Detail</a>
                                             </div>
                                         </div>
