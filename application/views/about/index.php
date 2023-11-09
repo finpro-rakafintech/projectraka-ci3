@@ -62,7 +62,10 @@
 <div class="container">
   <div class="row justify-content-md-center">
     <div class="col-md-auto">
-    <img src="<?php echo base_url('assets')?>/icons/makr.png" class="img-fluid" alt="Responsive image">
+    <img src="<?php echo base_url('assets')?>/TIM/nadiyah.png" class="img-fluid" alt="Responsive image">
+    </div>
+    <div class="col-md-auto">
+    <img src="<?php echo base_url('assets')?>/TIM/rifqi.png" style="width: 150px; heigh: 80px" class="img-fluid" alt="Responsive image">
     </div>
   
     
@@ -79,10 +82,10 @@
 <div class="container">
   <div class="row justify-content-md-center">
   <div class="col-md-auto">
-    <img src="<?php echo base_url('assets')?>/icons/makr.png" class="img-fluid" alt="Responsive image">
+    <img src="<?php echo base_url('assets')?>/TIM/dani.jpg" class="img-fluid" alt="Responsive image">
     </div>
     <div class="col-md-auto">
-    <img src="<?php echo base_url('assets')?>/icons/makr.png" class="img-fluid" alt="Responsive image">
+    <img src="<?php echo base_url('assets')?>/TIM/mila.png" class="img-fluid" alt="Responsive image">
     </div>
   </div>
 </div>
@@ -97,14 +100,14 @@
 <div class="container">
   <div class="row justify-content-md-center">
   <div class="col-md-auto">
-    <img src="<?php echo base_url('assets')?>/icons/makr.png" class="img-fluid" alt="Responsive image">
+    <img src="<?php echo base_url('assets')?>/TIM/samuel.png" style="width: 150px; heigh: 80px" class="img-fluid" alt="Responsive image">
     </div>
     <div class="col-md-auto">
-    <img src="<?php echo base_url('assets')?>/icons/makr.png" class="img-fluid" alt="Responsive image">
+    <img src="<?php echo base_url('assets')?>/TIM/dewa.png" class="img-fluid" alt="Responsive image">
     </div>
-    <div class="col-md-auto">
-    <img src="<?php echo base_url('assets')?>/icons/makr.png" class="img-fluid" alt="Responsive image">
-    </div>
+    <!-- <div class="col-md-auto">
+    <img src="<?php echo base_url('assets')?>/TIM/nadiyah.png" class="img-fluid" alt="Responsive image">
+    </div> -->
   </div>
 <!-- Three columns of text below the carousel -->
   <div class="row pt-5">
@@ -117,17 +120,17 @@
 <div class="container">
   <div class="row justify-content-md-center">
   <div class="col-md-auto">
+    <img src="<?php echo base_url('assets')?>/TIM/labib.jpg" class="img-fluid" alt="Responsive image">
+    </div>
+    <div class="col-md-auto">
+    <img src="<?php echo base_url('assets')?>/TIM/dendi.png" class="img-fluid" alt="Responsive image">
+    </div>
+    <!-- <div class="col-md-auto">
     <img src="<?php echo base_url('assets')?>/icons/makr.png" class="img-fluid" alt="Responsive image">
     </div>
     <div class="col-md-auto">
     <img src="<?php echo base_url('assets')?>/icons/makr.png" class="img-fluid" alt="Responsive image">
-    </div>
-    <div class="col-md-auto">
-    <img src="<?php echo base_url('assets')?>/icons/makr.png" class="img-fluid" alt="Responsive image">
-    </div>
-    <div class="col-md-auto">
-    <img src="<?php echo base_url('assets')?>/icons/makr.png" class="img-fluid" alt="Responsive image">
-    </div>
+    </div> -->
   </div>
 
 </div>

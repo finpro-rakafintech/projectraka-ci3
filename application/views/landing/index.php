@@ -52,7 +52,7 @@
                                 <?php endforeach; ?>
                             </div>
                           </div>
-                        
+                         
                           <div class="carousel-item">
                           <div class="row">
                                 <?php foreach ($v_product->result() as $row) : ?>
@@ -70,7 +70,7 @@
                                 <?php endforeach; ?>
                             </div>
                             </div>
-                        
+                            
                         
                         </div>
                     </div>
