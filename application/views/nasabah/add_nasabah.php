@@ -65,6 +65,7 @@
         <!-- Form fields for document upload -->
         <div class="form-group">
             <label for="kpt">Upload KTP</label>
+            <p style="color: red;"></p>
             <input type="file"  class="form-control" name="ktp" required>
         </div>
 
