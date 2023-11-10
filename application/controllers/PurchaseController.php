@@ -44,6 +44,7 @@ class PurchaseController extends CI_Controller
     {
         // Ambil data order berdasarkan order_id
         $order_data = $this->PurchaseModel->getOrderById($order_id);
+        // $order_id = $this->purchase_model->addPurchase($data);
 
         if ($order_data) {
             // Ambil data nasabah berdasarkan nasabah_id dari order
@@ -52,15 +53,109 @@ class PurchaseController extends CI_Controller
             // Ambil data product berdasarkan product_id dari order
             $product_data = $this->PurchaseModel->getProductById($order_data['product_id']);
 
+            $include = array(
+                'nama_user' => $this->session->userdata('nama_user'),
+                'header' => $this->load->view('layout/header'),
+                'navbar' => $this->load->view('layout/navbar'),
+                'active_link' => 'active',
+
+            );
             // Load view untuk menampilkan informasi
-            $this->load->view('statusPengajuan', array(
+            $data = array(
                 'order_data' => $order_data,
                 'nasabah_data' => $nasabah_data,
                 'product_data' => $product_data
+            );
+
+            // Add additional data to the existing data array
+            $data = array_merge($data, array(
+                'nama_user' => $this->session->userdata('nama_user'),
+                'header' => $this->load->view('layout/header', '', TRUE), // Set the third parameter to TRUE to return the view as a string
+                'navbar' => $this->load->view('layout/navbar', '', TRUE),
+                'active_link' => 'active'
             ));
+
+            $this->load->view('statusPengajuan', $data);
         } else {
             // Redirect atau tampilkan pesan jika order_id tidak valid
             redirect('halaman_error');
         }
+    }
+
+    public function updatePurchase()
+    {
+        if (isset($_POST['update'])) {
+            $order_id = $this->input->post('order_id');
+            $new_loan_amount = $this->input->post('updated_loan_amount');
+            $new_interest_rate = $this->input->post('updated_interest_rate');
+            $new_loan_term = $this->input->post('updated_loan_term');
+
+            // Lakukan validasi data jika diperlukan
+
+            // Update data peminjaman
+            $data = array(
+                'jumlah_pinjaman' => $new_loan_amount,
+                'suku_bunga' => $new_interest_rate,
+                'lama_pinjam' => $new_loan_term,
+                'date_ordered' => date('Y-m-d')
+            );
+
+            $this->PurchaseModel->updatePurchase($order_id, $data);
+            $this->session->set_userdata('order_id', $order_id);
+
+
+            // Redirect ke halaman proses_pengajuan
+            redirect('statusUpdatePengajuan/' . $order_id);
+        } else {
+            // Tampilkan halaman error atau redirect ke halaman sebelumnya
+            echo "Update gagal.";
+        }
+    }
+
+    public function updatePengajuan($order_id)
+    {
+        // Ambil data order berdasarkan order_id
+        $order_data = $this->PurchaseModel->getOrderById($order_id);
+        // $order_id = $this->purchase_model->addPurchase($data);
+
+        if ($order_data) {
+            // Ambil data nasabah berdasarkan nasabah_id dari order
+            $nasabah_data = $this->PurchaseModel->getNasabahById($order_data['nasabah_id']);
+
+            // Ambil data product berdasarkan product_id dari order
+            $product_data = $this->PurchaseModel->getProductById($order_data['product_id']);
+
+            $include = array(
+                'nama_user' => $this->session->userdata('nama_user'),
+                'header' => $this->load->view('layout/header'),
+                'navbar' => $this->load->view('layout/navbar'),
+                'active_link' => 'active',
+
+            );
+            // Load view untuk menampilkan informasi
+            $data = array(
+                'order_data' => $order_data,
+                'nasabah_data' => $nasabah_data,
+                'product_data' => $product_data
+            );
+
+            // Add additional data to the existing data array
+            $data = array_merge($data, array(
+                'nama_user' => $this->session->userdata('nama_user'),
+                'header' => $this->load->view('layout/header', '', TRUE), // Set the third parameter to TRUE to return the view as a string
+                'navbar' => $this->load->view('layout/navbar', '', TRUE),
+                'active_link' => 'active'
+            ));
+
+            $this->load->view('statusupdatePengajuan', $data);
+        } else {
+            // Redirect atau tampilkan pesan jika order_id tidak valid
+            redirect('halaman_error');
+        }
+    }
+    // PurchaseController.php
+    public function redirectToStatusUpdate($order_id)
+    {
+        redirect('updatePengajuan/' . $order_id);
     }
 }

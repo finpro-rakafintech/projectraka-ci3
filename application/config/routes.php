@@ -77,7 +77,11 @@ $route['add_nasabah'] = 'NasabahController/add';
 $route['profile'] = 'ProfileController/index';
 // $route['status_pengajuan'] = 'PurchaseController/statusPengajuan/$1';
 $route['statusPengajuan/(:num)'] = 'PurchaseController/statusPengajuan/$1';
+$route['statusUpdatePengajuan/(:num)'] = 'PurchaseController/updatePengajuan/$1';
+$route['statusUpdate'] = 'PurchaseController/updatePengajuan';
 
+
+$route['updatePurchase'] = 'PurchaseController/updatePurchase';
 
 
 $route['404_override'] = '';
