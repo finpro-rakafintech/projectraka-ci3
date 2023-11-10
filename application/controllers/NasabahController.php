@@ -74,7 +74,9 @@ class NasabahController extends CI_Controller
                         // Sesuaikan dengan data yang diperlukan
                     );
                     $this->PurchaseModel->addPurchase($product_data);
-                    redirect('status_pengajuan');
+                    $order_id = $this->PurchaseModel->addPurchase($product_data);
+                    // Setelah berhasil disimpan, tampilkan halaman status pengajuan atau pesan sukses
+                    redirect('statusPengajuan/' . $order_id);
                 } else {
                     // Failed to save nasabah data, display error message
                     $this->load->view('layout/header');

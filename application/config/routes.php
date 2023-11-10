@@ -75,6 +75,7 @@ $route['pengajuan_kpr2'] = 'PengajuanKprController/index2';
 $route['add_nasabah'] = 'NasabahController/add';
 
 $route['profile'] = 'ProfileController/index';
+// $route['status_pengajuan'] = 'PurchaseController/statusPengajuan/$1';
 $route['statusPengajuan/(:num)'] = 'PurchaseController/statusPengajuan/$1';
 
 

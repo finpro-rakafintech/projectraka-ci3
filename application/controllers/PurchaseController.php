@@ -31,8 +31,9 @@ class PurchaseController extends CI_Controller
             // Simpan data product ke tabel 'purchase'
             $this->PurchaseModel->addPurchase($product_data);
 
+            $order_id = $this->PurchaseModel->addPurchase($product_data);
             // Setelah berhasil disimpan, tampilkan halaman status pengajuan atau pesan sukses
-            redirect('status_pengajuan');
+            redirect('statusPengajuan/' . $order_id);
         } else {
             // Validasi gagal, tampilkan pesan kesalahan atau pengalihan ke halaman sebelumnya
             echo "Validasi gagal.";
@@ -52,7 +53,7 @@ class PurchaseController extends CI_Controller
             $product_data = $this->PurchaseModel->getProductById($order_data['product_id']);
 
             // Load view untuk menampilkan informasi
-            $this->load->view('status_pengajuan', array(
+            $this->load->view('statusPengajuan', array(
                 'order_data' => $order_data,
                 'nasabah_data' => $nasabah_data,
                 'product_data' => $product_data

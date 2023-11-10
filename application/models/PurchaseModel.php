@@ -7,6 +7,11 @@ class PurchaseModel extends CI_Model
     {
         // Insert data into the 'purchase' table
         $this->db->insert('purchase', $data);
+
+        // Get the inserted order_id
+        $order_id = $this->db->insert_id();
+
+        return $order_id;
     }
     public function getOrderById($order_id)
     {
