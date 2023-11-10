@@ -1,57 +1,23 @@
-<main class="container mt-5 pb-5">
-
-    <h1 class="">Status Pengajuan</h1>
-
-    <!-- Informasi ID-->
-    <div class="mb-3 row">
-    <label for="order_id" class="col-sm-2 col-form-label"><strong>Order ID:</strong></label>
-    <div class="col-sm-10">
-      <input type="text" readonly class="form-control-plaintext" id="order_id" value="001">
-    </div>
-    </div>
-    <!-- Status-->
-    <div class="mb-3 row">
-    <label for="order_id" class="col-sm-2 col-form-label"><strong>Status: </strong></label>
-    <div class="col-sm-10">
-      <input type="text" readonly class="form-control-plaintext" id="order_id" value="Gagal">
-    </div>
-    </div>
-   
+<main>
+    
+    <h1>Status Pengajuan</h1>
+    <p><strong>Order ID:</strong> <?= $order_data['order_id']; ?></p>
+    <p><strong>Status:</strong> <?= $order_data['order_status']; ?></p>
 
     <h2>Informasi Nasabah</h2>
-    <div class="mb-3 row">
-    <label for="order_id" class="col-sm-2 col-form-label"><strong>Nama Nasabah:</strong></label>
-    <div class="col-sm-10">
-      <input type="text" readonly class="form-control-plaintext" id="order_id" value="Dewa 19">
-    </div>
-    </div>
-   
+    <p><strong>Nama Nasabah:</strong> <?= $nasabah_data['firstname'] . ' ' . $nasabah_data['lastname']; ?></p>
     <!-- Tambahkan informasi nasabah lainnya sesuai kebutuhan -->
 
-    
     <h2>Informasi Produk</h2>
-
-    <div class="mb-3 row">
-    <label for="order_id" class="col-sm-2 col-form-label"><strong>Nama Produk:</strong></label>
-    <div class="col-sm-10">
-      <input type="text" readonly class="form-control-plaintext" id="order_id" value="Dewa 19">
-    </div>
-    </div>
-  
-    <div class="mb-3 row">
-    <label for="order_id" class="col-sm-2 col-form-label"><strong>Harga Produk:</strong></label>
-    <div class="col-sm-10">
-      <input type="text" readonly class="form-control-plaintext" id="order_id" value="Dewa 19">
-    </div>
-    </div>
-    
+    <p><strong>Nama Produk:</strong> <?= $product_data['nm_product']; ?></p>
+    <p><strong>Harga Produk:</strong> <?= $product_data['price']; ?></p>
     <!-- Tambahkan informasi produk lainnya sesuai kebutuhan -->
 
 
     <form method="post" action="" class="mt-4">
         <div class="form-group">
             <label for="loan_amount">Jumlah Pinjaman (Rp):</label>
-            <input type="number" name="loan_amount" class="form-control" placeholder="Eg: Rp.1000000" required>
+            <input type="number" name="loan_amount" class="form-control" required value="<?= $product_data['price'] * 0.7; ?>">
         </div>
 
         <div class="form-group">
@@ -65,19 +31,18 @@
             <input type="range" name="loan_term" min="0" max="50" step="1" class="form-control" required>
             <output for="loan_term"></output>
             <div class="range-markers">
-                <span class="marker" style="left: 0%;">0 </span>
-                <span class="marker" style="left: 20%;">10 </span>
-                <span class="marker" style="left: 40%;">20 </span>
-                <span class="marker" style="left: 60%;">30 </span>
-                <span class="marker" style="left: 80%;">40 </span>
-                <span class="marker" style="left: 100%;">50 </span>
+                <span class="marker" style="left: 0%;">0 Tahun</span>
+                <span class="marker" style="left: 20%;">10 Tahun</span>
+                <span class="marker" style="left: 40%;">20 Tahun</span>
+                <span class="marker" style="left: 60%;">30 Tahun</span>
+                <span class="marker" style="left: 80%;">40 Tahun</span>
+                <span class="marker" style="left: 100%;">50 Tahun</span>
             </div>
         </div>
 
         <button type="submit" name="submit" class="btn btn-warning">CEK</button>
     </form>
-    
-
+    </main>
     <section class="container pr-5 mb-5">
         <script>
             const interestRateInput = document.querySelector('input[name="interest_rate"]');

@@ -21,13 +21,13 @@ class StatusPengajuanController extends CI_Controller
 	public function index()
 	{
 
-		$get_product = $this->PurchaseModel->getProductById($product_id);
+		// $get_product = $this->PurchaseModel->getProductById($product_id);
 		$include = array(
 			'nama_user' => $this->session->userdata('nama_user'),
 			'header' => $this->load->view('layout/header'),
 			'navbar' => $this->load->view('layout/navbar'),
 			'active_link' => 'active',
-			'v_product' => $get_product,
+			
 		);
 
 		$this->load->view('nasabah/statusPengajuan', $include);
