@@ -1,14 +1,5 @@
-<!-- status_pengajuan.php -->
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Status Pengajuan</title>
-</head>
-
-<body>
+<main>
+    
     <h1>Status Pengajuan</h1>
     <p><strong>Order ID:</strong> <?= $order_data['order_id']; ?></p>
     <p><strong>Status:</strong> <?= $order_data['order_status']; ?></p>
@@ -174,6 +165,4 @@
         </script>
 
     </section>
-</body>
-
-</html>
+    </main>
