@@ -68,12 +68,6 @@
         $total_loan_payment = $monthly_payment * $loan_term_months; // Total pinjaman
         $total_interest_payment = $total_loan_payment - $initial_loan_amount; // Total bunga pinjaman
 
-        // // Menampilkan hasil
-        // echo "<h2>Hasil Perhitungan</h2>";
-        // echo "Jumlah Pinjaman: Rp" . number_format($loan_amount, 2) . "<br>";
-        // echo "Suku Bunga Tahunan: " . number_format($interest_rate * 100, 2) . "%<br>";
-        // echo "Lama Pinjaman: " . $loan_term . " tahun<br>";
-        // echo "Angsuran per Bulan: Rp" . number_format($monthly_payment, 2) . "<br>";
 
         // Menampilkan ringkasan informasi
         echo "<h2>Ringkasan</h2>";
@@ -148,4 +142,4 @@
         });
     </script>
 
-    </section>
+</section>
