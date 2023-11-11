@@ -30,9 +30,9 @@ class PurchaseModel extends CI_Model
         $this->db->where('product_id', $product_id);
         return $this->db->get('product')->row_array();
     }
-    public function updatePurchase($data)
+    public function updatePurchase($order_id, $data)
     {
-        $this->db->where('order_id', $data);
+        $this->db->where('order_id', $order_id);
         $this->db->update('purchase', $data);
     }
 }

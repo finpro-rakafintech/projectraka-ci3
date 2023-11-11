@@ -101,7 +101,7 @@ class PurchaseController extends CI_Controller
                 'date_ordered' => date('Y-m-d')
             );
 
-            $this->PurchaseModel->updatePurchase($data);
+            $this->PurchaseModel->updatePurchase($order_id, $data);
             $this->session->set_userdata('order_id', $order_id);
 
 
