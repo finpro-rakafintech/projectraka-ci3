@@ -19,7 +19,7 @@ class NasabahController extends CI_Controller
 
         if ($existingNasabah) {
             // User already registered as a Nasabah, redirect to nasabah_cukuruk
-            redirect('nasabah_cukuruk');
+            redirect('UserController');
         }
 
         $this->form_validation->set_rules('firstname', 'First Name', 'trim|required');
