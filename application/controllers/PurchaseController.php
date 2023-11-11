@@ -85,7 +85,7 @@ class PurchaseController extends CI_Controller
     public function updatePurchase()
     {
         if (isset($_POST['update'])) {
-            // $order_id = $this->input->post('order_id');
+            $order_id = $this->input->post('order_id');
             $new_loan_amount = $this->input->post('updated_loan_amount');
             $new_interest_rate = $this->input->post('updated_interest_rate');
             $new_loan_term = $this->input->post('updated_loan_term');
