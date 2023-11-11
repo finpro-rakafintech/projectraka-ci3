@@ -32,7 +32,7 @@ class PurchaseModel extends CI_Model
     }
     public function updatePurchase($data)
     {
-        $this->db->where('order_id', $order_id);
+        $this->db->where('order_id', $data);
         $this->db->update('purchase', $data);
     }
 }
