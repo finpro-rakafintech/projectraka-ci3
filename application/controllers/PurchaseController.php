@@ -82,7 +82,7 @@ class PurchaseController extends CI_Controller
         }
     }
 
-    public function updatePurchase()
+    public function updatePurchase($order_id)
     {
         if (isset($_POST['update'])) {
             $order_id = $this->input->post('order_id');
